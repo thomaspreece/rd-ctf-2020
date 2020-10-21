@@ -1,12 +1,35 @@
 version: '2'
 
 services:
+  louketo-proxy:
+    image: quay.io/louketo/louketo-proxy
+    ports:
+      - 8443:8443
+    command: "--listen :8443 --upstream-url http://nginx:8080 --discovery-url https://sso-nbe.bbcis.uk/auth/realms/rd-security-training --client-id ${CLIENT_ID} --client-secret ${CLIENT_SECRET} --tls-cert /opt/tls-cert.pem --tls-private-key /opt/tls-key.pem"
+    depends_on:
+      - nginx
+    volumes:
+      - ./127.0.0.1-key.pem:/opt/tls-key.pem
+      - ./127.0.0.1.pem:/opt/tls-cert.pem
+
+  nginx:
+    image: nginx:1.17
+    volumes:
+      - ./conf/nginx/http.conf:/etc/nginx/nginx.conf
+    depends_on:
+      - ctfd
+      # - echo
+
+  # # Echo is not needed but useful for testing
+  # echo:
+  #   image: gcr.io/google_containers/echoserver:1.8
+  #   ports:
+  #     - 8080:8080
+
   ctfd:
     build: .
     user: root
     restart: always
-    ports:
-      - "8000:8000"
     environment:
       - UPLOAD_FOLDER=/var/uploads
       - DATABASE_URL=mysql+pymysql://ctfd:ctfd@db/ctfd
@@ -25,15 +48,6 @@ services:
     networks:
         default:
         internal:
-
-  nginx:
-    image: nginx:1.17
-    volumes:
-      - ./conf/nginx/http.conf:/etc/nginx/nginx.conf
-    ports:
-      - 80:80
-    depends_on:
-      - ctfd
 
   db:
     image: mariadb:10.4.12

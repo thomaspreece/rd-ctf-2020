@@ -78,3 +78,9 @@ node_modules/
 
 # Flask Profiler files
 flask_profiler.sql
+
+
+# Custom Files
+start.sh
+127.0.0.1-key.pem
+127.0.0.1.pem

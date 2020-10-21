@@ -1,3 +1,23 @@
+# RD-CTFD
+
+This is a custom version of CTFD which is fronted by [louketo-proxy](https://github.com/louketo/louketo-proxy) to allow authentication to be provided by R&D's deployed KeyCloak server.
+
+## Setup KeyCloak
+You will need a Realm in KeyCloak. Next you will need to update docker-compose.yml to point to that realm. Now you need to create a new client. Click Create on the Clients section.
+
+Set `Enabled` and `Standard Flow Enabled` to ON. All other toggles can be OFF. Set `Valid Redirect URIs` to be the URL of where you are running this container. E.g. `https://127.0.0.1:8443/*`.
+
+Click `Credentials` tab, and note down client_secret. Click `Mappers` tab. Click Create. Name it `AudienceMapper`. Select `Audience` under `Mapper Type`. In `Included Client Audience` select the name of this client you are editing. Click Save.
+
+## Generate Keys
+You'll need TLS keys. See the "Setting up https" section on https://confluence.dev.bbc.co.uk/display/PRODTOOLS/Getting+Started+with+Docker+Development for an easy way to generate local certificates for testing on localhost/127.0.0.1.
+
+## Start DockerCompose
+You'll need to copy `./start_example.sh` to `start.sh` and add in client_secret and client_id from the above setup. Now you can start CTFD by running:
+```
+./start.sh
+```
+
 # ![](https://github.com/CTFd/CTFd/blob/master/CTFd/themes/core/static/img/logo.png?raw=true)
 
 ![CTFd MySQL CI](https://github.com/CTFd/CTFd/workflows/CTFd%20MySQL%20CI/badge.svg?branch=master)

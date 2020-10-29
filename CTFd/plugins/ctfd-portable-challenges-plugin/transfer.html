@@ -11,7 +11,7 @@
         <div class="col-md-4 form-group">
             <form id="import-form" action="{{ request.script_root }}/admin/yaml" method="POST" enctype="multipart/form-data">
                 <input style="margin: auto;" type="file" name="file" value="file" id="tarfile">
-                <input type="hidden" name="nonce" value="{{ nonce }}">
+                <input type="hidden" name="nonce" value="{{ Session.nonce }}">
             </form>
         </div>
         <div class="col-md-3">

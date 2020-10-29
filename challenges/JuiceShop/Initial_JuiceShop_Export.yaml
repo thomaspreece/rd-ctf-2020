@@ -1,0 +1,1888 @@
+---
+name: Confidential Document
+value: 100
+description: 'Access a confidential document. (Difficulty Level: 1)'
+category: Sensitive Data Exposure
+type: standard
+flags:
+- flag: 4c0947e9cdb67567c40b74fef666de3e20cd8046
+  type: static
+hints:
+- hint: Analyze and tamper with links in the application that deliver a file directly.
+  type: standard
+  cost: 0
+- hint: https://pwning.owasp-juice.shop/part2/sensitive-data-exposure.html#access-a-confidential-document
+  type: standard
+  cost: 20
+hidden: false
+---
+name: DOM XSS
+value: 100
+description: 'Perform a <i>DOM</i> XSS attack with <code>&lt;iframe src="javascript:alert(&#x60;xss&#x60;)"&gt;</code>.
+  (Difficulty Level: 1)'
+category: XSS
+type: standard
+flags:
+- flag: d4d03490069d7bd1e36d6b13d034770ce4145c03
+  type: static
+hints:
+- hint: Look for an input field where its content appears in the HTML when its form
+    is submitted.
+  type: standard
+  cost: 0
+- hint: https://pwning.owasp-juice.shop/part2/xss.html#perform-a-dom-xss-attack
+  type: standard
+  cost: 20
+hidden: false
+---
+name: Error Handling
+value: 100
+description: 'Provoke an error that is neither very gracefully nor consistently handled.
+  (Difficulty Level: 1)'
+category: Security Misconfiguration
+type: standard
+flags:
+- flag: c654eba158b17a738145e01dd836218135b697ee
+  type: static
+hints:
+- hint: Try to submit bad input to forms. Alternatively tamper with URL paths or parameters.
+  type: standard
+  cost: 0
+- hint: https://pwning.owasp-juice.shop/part2/security-misconfiguration.html#provoke-an-error-that-is-neither-very-gracefully-nor-consistently-handled
+  type: standard
+  cost: 20
+hidden: false
+---
+name: Outdated Whitelist
+value: 100
+description: 'Let us redirect you to one of our crypto currency addresses which are
+  not promoted any longer. (Difficulty Level: 1)'
+category: Unvalidated Redirects
+type: standard
+flags:
+- flag: 8a4e2c35b6ebf9fe41603b3288d1cd0fb550bc1a
+  type: static
+hints:
+- hint: We might have failed to take this out of our code properly.
+  type: standard
+  cost: 0
+- hint: https://pwning.owasp-juice.shop/part2/unvalidated-redirects.html#let-us-redirect-you-to-one-of-our-crypto-currency-addresses
+  type: standard
+  cost: 20
+hidden: false
+---
+name: Privacy Policy
+value: 100
+description: 'Read our privacy policy. (Difficulty Level: 1)'
+category: Miscellaneous
+type: standard
+flags:
+- flag: 4a1acdf42c9f5cbcb1b31bb97ad14927d63c9830
+  type: static
+hints:
+- hint: We won't even ask you to confirm that you did. Just read it. Please. Pretty
+    please.
+  type: standard
+  cost: 0
+- hint: https://pwning.owasp-juice.shop/part2/miscellaneous.html#read-our-privacy-policy
+  type: standard
+  cost: 20
+hidden: false
+---
+name: Repetitive Registration
+value: 100
+description: 'Follow the DRY principle while registering a user. (Difficulty Level:
+  1)'
+category: Improper Input Validation
+type: standard
+flags:
+- flag: 51f0c919ad75089a4eb1609d7701a355e2ea785c
+  type: static
+hints:
+- hint: You can solve this by cleverly interacting with the UI or bypassing it altogether.
+  type: standard
+  cost: 0
+- hint: https://pwning.owasp-juice.shop/part2/improper-input-validation.html#follow-the-dry-principle-while-registering-a-user
+  type: standard
+  cost: 20
+hidden: false
+---
+name: Score Board
+value: 100
+description: 'Find the carefully hidden ''Score Board'' page. (Difficulty Level: 1)'
+category: Miscellaneous
+type: standard
+flags:
+- flag: 804ba6b98b739652d65e6d182c85f04ae43c29d3
+  type: static
+hints:
+- hint: Try to find a reference or clue behind the scenes. Or simply guess what URL
+    the Score Board might have.
+  type: standard
+  cost: 0
+- hint: https://pwning.owasp-juice.shop/part2/score-board.html#find-the-carefully-hidden-score-board-page
+  type: standard
+  cost: 20
+hidden: false
+---
+name: Zero Stars
+value: 100
+description: 'Give a devastating zero-star feedback to the store. (Difficulty Level:
+  1)'
+category: Improper Input Validation
+type: standard
+flags:
+- flag: 6e29a7914a6bc7738d1eaf0494774f3f015c0b36
+  type: static
+hints:
+- hint: Before you invest time bypassing the API, you might want to play around with
+    the UI a bit.
+  type: standard
+  cost: 0
+- hint: https://pwning.owasp-juice.shop/part2/improper-input-validation.html#give-a-devastating-zero-star-feedback-to-the-store
+  type: standard
+  cost: 20
+hidden: false
+---
+name: Missing Encoding
+value: 100
+description: 'Retrieve the photo of Bjoern''s cat in "melee combat-mode". (Difficulty
+  Level: 1)'
+category: Improper Input Validation
+type: standard
+flags:
+- flag: 8ea50bea721508374e24a962873f26e0df87f1c8
+  type: static
+hints:
+- hint: Check the Photo Wall for an image that could not be loaded correctly.
+  type: standard
+  cost: 0
+- hint: https://pwning.owasp-juice.shop/part2/improper-input-validation.html#retrieve-the-photo-of-bjoerns-cat-in-melee-combat-mode
+  type: standard
+  cost: 20
+hidden: false
+---
+name: Exposed Metrics
+value: 100
+description: 'Find the endpoint that serves usage data to be scraped by a <a href="https://github.com/prometheus/prometheus">popular
+  monitoring system</a>. (Difficulty Level: 1)'
+category: Sensitive Data Exposure
+type: standard
+flags:
+- flag: e9536ada86522e6c6fda544cbc4110b0484cc798
+  type: static
+hints:
+- hint: Try to guess what URL the endpoint might have.
+  type: standard
+  cost: 0
+- hint: https://pwning.owasp-juice.shop/part2/sensitive-data-exposure.html#find-the-endpoint-that-serves-usage-data-to-be-scraped-by-a-popular-monitoring-system
+  type: standard
+  cost: 20
+hidden: false
+---
+name: Bonus Payload
+value: 100
+description: 'Use the bonus payload <code>&lt;iframe width=&quot;100%&quot; height=&quot;166&quot;
+  scrolling=&quot;no&quot; frameborder=&quot;no&quot; allow=&quot;autoplay&quot; src=&quot;https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/771984076&amp;color=%23ff5500&amp;auto_play=true&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true&quot;&gt;&lt;/iframe&gt;</code>
+  in the <i>DOM XSS</i> challenge. (Difficulty Level: 1)'
+category: XSS
+type: standard
+flags:
+- flag: ac539dff1f7bf50fe622c1ba7e45fe232cc5c9cc
+  type: static
+hints:
+- hint: Copy + Paste = Solved!
+  type: standard
+  cost: 0
+- hint: https://pwning.owasp-juice.shop/part2/xss.html#use-the-bonus-payload-in-the-dom-xss-challenge
+  type: standard
+  cost: 20
+hidden: false
+---
+name: Bully Chatbot
+value: 100
+description: 'Receive a coupon code from the support chatbot. (Difficulty Level: 1)'
+category: Miscellaneous
+type: standard
+flags:
+- flag: 2547fc0ba4714fff1b37cdfbf52e960d287d9efe
+  type: static
+hints:
+- hint: Just keep asking.
+  type: standard
+  cost: 0
+- hint: https://pwning.owasp-juice.shop/part2/miscellaneous.html#receive-a-coupon-code-from-the-support-chatbot
+  type: standard
+  cost: 20
+hidden: false
+---
+name: Admin Section
+value: 250
+description: 'Access the administration section of the store. (Difficulty Level: 2)'
+category: Broken Access Control
+type: standard
+flags:
+- flag: e4578904d95cfe1f1519172645d37b3768430395
+  type: static
+hints:
+- hint: It is just slightly harder to find than the score board link.
+  type: standard
+  cost: 0
+- hint: https://pwning.owasp-juice.shop/part2/broken-access-control.html#access-the-administration-section-of-the-store
+  type: standard
+  cost: 50
+hidden: false
+---
+name: Deprecated Interface
+value: 250
+description: 'Use a deprecated B2B interface that was not properly shut down. (Difficulty
+  Level: 2)'
+category: Security Misconfiguration
+type: standard
+flags:
+- flag: ba0fe9e60efd0db0fdb6e7f02372b345d505db12
+  type: static
+hints:
+- hint: The developers who disabled the interface think they could go invisible by
+    just closing their eyes.
+  type: standard
+  cost: 0
+- hint: https://pwning.owasp-juice.shop/part2/security-misconfiguration.html#use-a-deprecated-b2b-interface-that-was-not-properly-shut-down
+  type: standard
+  cost: 50
+hidden: false
+---
+name: Five-Star Feedback
+value: 250
+description: 'Get rid of all 5-star customer feedback. (Difficulty Level: 2)'
+category: Broken Access Control
+type: standard
+flags:
+- flag: 79c92cac89bb6643b9bf68fb07e5446b9dee0bc2
+  type: static
+hints:
+- hint: Once you found admin section of the application, this challenge is almost
+    trivial.
+  type: standard
+  cost: 0
+- hint: https://pwning.owasp-juice.shop/part2/broken-access-control.html#get-rid-of-all-5-star-customer-feedback
+  type: standard
+  cost: 50
+hidden: false
+---
+name: Login Admin
+value: 250
+description: 'Log in with the administrator''s user account. (Difficulty Level: 2)'
+category: Injection
+type: standard
+flags:
+- flag: 43b919c641b0da10e790640355f5bd95d767e0ae
+  type: static
+hints:
+- hint: Try different SQL Injection attack patterns depending whether you know the
+    admin's email address or not.
+  type: standard
+  cost: 0
+- hint: https://pwning.owasp-juice.shop/part2/injection.html#log-in-with-the-administrators-user-account
+  type: standard
+  cost: 50
+hidden: false
+---
+name: Login MC SafeSearch
+value: 250
+description: 'Log in with MC SafeSearch''s original user credentials without applying
+  SQL Injection or any other bypass. (Difficulty Level: 2)'
+category: Sensitive Data Exposure
+type: standard
+flags:
+- flag: 09f1eeb06a5b1cc74a3d4b3e2b875fa1bc3ae99b
+  type: static
+hints:
+- hint: You should listen to MC's hit song "Protect Ya Passwordz".
+  type: standard
+  cost: 0
+- hint: https://pwning.owasp-juice.shop/part2/sensitive-data-exposure.html#log-in-with-mc-safesearchs-original-user-credentials
+  type: standard
+  cost: 50
+hidden: false
+---
+name: Password Strength
+value: 250
+description: 'Log in with the administrator''s user credentials without previously
+  changing them or applying SQL Injection. (Difficulty Level: 2)'
+category: Broken Authentication
+type: standard
+flags:
+- flag: 94eb71df13fa4b3838db027a0df5759165c8b745
+  type: static
+hints:
+- hint: This one should be equally easy to a) brute force, b) crack the password hash
+    or c) simply guess.
+  type: standard
+  cost: 0
+- hint: https://pwning.owasp-juice.shop/part2/broken-authentication.html#log-in-with-the-administrators-user-credentials-without-previously-changing-them-or-applying-sql-injection
+  type: standard
+  cost: 50
+hidden: false
+---
+name: Reflected XSS
+value: 250
+description: 'Perform a <i>reflected</i> XSS attack with <code>&lt;iframe src="javascript:alert(&#x60;xss&#x60;)"&gt;</code>.
+  <em>(This challenge is <strong>not available</strong> on Heroku!)</em> (Difficulty
+  Level: 2)'
+category: XSS
+type: standard
+flags:
+- flag: 585e0a3cdf69571736524b6e5564b5a75660300c
+  type: static
+hints:
+- hint: Look for a url parameter where its value appears in the page it is leading
+    to.
+  type: standard
+  cost: 0
+- hint: https://pwning.owasp-juice.shop/part2/xss.html#perform-a-reflected-xss-attack
+  type: standard
+  cost: 50
+hidden: false
+---
+name: Security Policy
+value: 250
+description: 'Behave like any "white-hat" should before getting into the action. (Difficulty
+  Level: 2)'
+category: Miscellaneous
+type: standard
+flags:
+- flag: 8d55f7f0257d9f1e27a82fdc80b313c8a9427f00
+  type: static
+hints:
+- hint: Undoubtably you want to read our security policy before conducting any research
+    on our application.
+  type: standard
+  cost: 0
+- hint: https://pwning.owasp-juice.shop/part2/miscellaneous.html#behave-like-any-white-hat-should-before-getting-into-the-action
+  type: standard
+  cost: 50
+hidden: false
+---
+name: View Basket
+value: 250
+description: 'View another user''s shopping basket. (Difficulty Level: 2)'
+category: Broken Access Control
+type: standard
+flags:
+- flag: 3ac2625074a2ba25efe41fa74491f96b0f5428e9
+  type: static
+hints:
+- hint: Have an eye on the HTTP traffic while shopping. Alternatively try to find
+    a client-side association of users to their basket.
+  type: standard
+  cost: 0
+- hint: https://pwning.owasp-juice.shop/part2/broken-access-control.html#view-another-users-shopping-basket
+  type: standard
+  cost: 50
+hidden: false
+---
+name: Weird Crypto
+value: 250
+description: '<a href="/#/contact">Inform the shop</a> about an algorithm or library
+  it should definitely not use the way it does. (Difficulty Level: 2)'
+category: Cryptographic Issues
+type: standard
+flags:
+- flag: 16749beceb7dda81ae1825d512525909dd4aa5c6
+  type: static
+hints:
+- hint: Report one of four possible answers via the "Customer Feedback" form.
+  type: standard
+  cost: 0
+- hint: https://pwning.owasp-juice.shop/part2/cryptographic-issues.html#inform-the-shop-about-an-algorithm-or-library-it-should-definitely-not-use-the-way-it-does
+  type: standard
+  cost: 50
+hidden: false
+---
+name: Meta Geo Stalking
+value: 250
+description: 'Determine the answer to John''s security question by looking at an upload
+  of him to the Photo Wall and use it to reset his password via the <a href="/#/forgot-password">Forgot
+  Password</a> mechanism. (Difficulty Level: 2)'
+category: Sensitive Data Exposure
+type: standard
+flags:
+- flag: 1f61c4ae89fc627c9b0ffd8689d8e28c0de95664
+  type: static
+hints:
+- hint: Take a look at the meta data of the corresponding photo.
+  type: standard
+  cost: 0
+- hint: https://pwning.owasp-juice.shop/part2/sensitive-data-exposure.html#determine-the-answer-to-johns-security-question
+  type: standard
+  cost: 50
+hidden: false
+---
+name: Visual Geo Stalking
+value: 250
+description: 'Determine the answer to Emma''s security question by looking at an upload
+  of her to the Photo Wall and use it to reset her password via the <a href="/#/forgot-password">Forgot
+  Password</a> mechanism. (Difficulty Level: 2)'
+category: Sensitive Data Exposure
+type: standard
+flags:
+- flag: a952fcfc791cc7168065e856d6f9dbde274909c4
+  type: static
+hints:
+- hint: Take a look at the details in the photo to determine the location of where
+    it was taken.
+  type: standard
+  cost: 0
+- hint: https://pwning.owasp-juice.shop/part2/sensitive-data-exposure.html#determine-the-answer-to-emmas-security-question
+  type: standard
+  cost: 50
+hidden: false
+---
+name: API-only XSS
+value: 450
+description: 'Perform a <i>persisted</i> XSS attack with <code>&lt;iframe src="javascript:alert(&#x60;xss&#x60;)"&gt;</code>
+  without using the frontend application at all. <em>(This challenge is <strong>not
+  available</strong> on Heroku!)</em> (Difficulty Level: 3)'
+category: XSS
+type: standard
+flags:
+- flag: 6246279270cffa1d38510f3991ee26c2e2a61cef
+  type: static
+hints:
+- hint: You need to work with the server-side API directly. Try different HTTP verbs
+    on different entities exposed through the API.
+  type: standard
+  cost: 0
+- hint: https://pwning.owasp-juice.shop/part2/xss.html#perform-a-persisted-xss-attack-without-using-the-frontend-application-at-all
+  type: standard
+  cost: 90
+hidden: false
+---
+name: Admin Registration
+value: 450
+description: 'Register as a user with administrator privileges. (Difficulty Level:
+  3)'
+category: Improper Input Validation
+type: standard
+flags:
+- flag: a2ac6bc8886a1687c544045e1511a42fe7d06f64
+  type: static
+hints:
+- hint: You have to assign the unassignable.
+  type: standard
+  cost: 0
+- hint: https://pwning.owasp-juice.shop/part2/improper-input-validation.html#register-as-a-user-with-administrator-privileges
+  type: standard
+  cost: 90
+hidden: false
+---
+name: Bjoern's Favorite Pet
+value: 450
+description: 'Reset the password of Bjoern''s OWASP account via the <a href="/#/forgot-password">Forgot
+  Password</a> mechanism with <i>the original answer</i> to his security question.
+  (Difficulty Level: 3)'
+category: Broken Authentication
+type: standard
+flags:
+- flag: 111831a7a01a1cd630a7a4ba61918995a7c8f748
+  type: static
+hints:
+- hint: He might have spoilered it on at least one occasion where a camera was running.
+    Maybe elsewhere as well.
+  type: standard
+  cost: 0
+- hint: https://pwning.owasp-juice.shop/part2/broken-authentication.html#reset-the-password-of-bjoerns-owasp-account-via-the-forgot-password-mechanism
+  type: standard
+  cost: 90
+hidden: false
+---
+name: CAPTCHA Bypass
+value: 450
+description: 'Submit 10 or more customer feedbacks within 10 seconds. (Difficulty
+  Level: 3)'
+category: Broken Anti Automation
+type: standard
+flags:
+- flag: eefa1ef0b1b1980f43a405d5489d5bc150ae3e31
+  type: static
+hints:
+- hint: After finding a CAPTCHA bypass, write a script that automates feedback submission.
+    Or open many browser tabs and be really quick.
+  type: standard
+  cost: 0
+- hint: https://pwning.owasp-juice.shop/part2/broken-anti-automation.html#submit-10-or-more-customer-feedbacks-within-10-seconds
+  type: standard
+  cost: 90
+hidden: false
+---
+name: Client-side XSS Protection
+value: 450
+description: 'Perform a <i>persisted</i> XSS attack with <code>&lt;iframe src="javascript:alert(&#x60;xss&#x60;)"&gt;</code>
+  bypassing a <i>client-side</i> security mechanism. <em>(This challenge is <strong>not
+  available</strong> on Heroku!)</em> (Difficulty Level: 3)'
+category: XSS
+type: standard
+flags:
+- flag: 4b9fe092a4280cd999b94b054547160f5d6a962d
+  type: static
+hints:
+- hint: Only some input fields validate their input. Even less of these are persisted
+    in a way where their content is shown on another screen.
+  type: standard
+  cost: 0
+- hint: https://pwning.owasp-juice.shop/part2/xss.html#perform-a-persisted-xss-attack-bypassing-a-client-side-security-mechanism
+  type: standard
+  cost: 90
+hidden: false
+---
+name: Database Schema
+value: 450
+description: 'Exfiltrate the entire DB schema definition via SQL Injection. (Difficulty
+  Level: 3)'
+category: Injection
+type: standard
+flags:
+- flag: 26a7d38dd3ff962c7312762068244fd11fab53f7
+  type: static
+hints:
+- hint: Find out where this information could come from. Then craft a UNION SELECT
+    attack string against an endpoint that offers an unnecessary way to filter data.
+  type: standard
+  cost: 0
+- hint: https://pwning.owasp-juice.shop/part2/injection.html#exfiltrate-the-entire-db-schema-definition-via-sql-injection
+  type: standard
+  cost: 90
+hidden: false
+---
+name: Forged Feedback
+value: 450
+description: 'Post some feedback in another users name. (Difficulty Level: 3)'
+category: Broken Access Control
+type: standard
+flags:
+- flag: 15a51d1a9a7ffe26dfd1f4880107ae03a8e65461
+  type: static
+hints:
+- hint: You can solve this by tampering with the user interface or by intercepting
+    the communication with the RESTful backend.
+  type: standard
+  cost: 0
+- hint: https://pwning.owasp-juice.shop/part2/broken-access-control.html#post-some-feedback-in-another-users-name
+  type: standard
+  cost: 90
+hidden: false
+---
+name: Forged Review
+value: 450
+description: 'Post a product review as another user or edit any user''s existing review.
+  (Difficulty Level: 3)'
+category: Broken Access Control
+type: standard
+flags:
+- flag: ad20ca9177caa617cae19f5df4326b11dba7fd31
+  type: static
+hints:
+- hint: Observe the flow of product review posting and editing and see if you can
+    exploit it.
+  type: standard
+  cost: 0
+- hint: https://pwning.owasp-juice.shop/part2/broken-access-control.html#post-a-product-review-as-another-user-or-edit-any-users-existing-review
+  type: standard
+  cost: 90
+hidden: false
+---
+name: GDPR Data Erasure
+value: 450
+description: 'Log in with Chris'' erased user account. (Difficulty Level: 3)'
+category: Broken Authentication
+type: standard
+flags:
+- flag: 3770797d32f6fa7bddbde8a6e1e4b474fc3f5f4a
+  type: static
+hints:
+- hint: Turns out that something is technically and legally wrong with the implementation
+    of the "right to be forgotten" for users.
+  type: standard
+  cost: 0
+- hint: https://pwning.owasp-juice.shop/part2/broken-authentication.html#log-in-with-chris-erased-user-account
+  type: standard
+  cost: 90
+hidden: false
+---
+name: Login Amy
+value: 450
+description: 'Log in with Amy''s original user credentials. (This could take 93.83
+  billion trillion trillion centuries to brute force, but luckily she did not read
+  the "One Important Final Note") (Difficulty Level: 3)'
+category: Sensitive Data Exposure
+type: standard
+flags:
+- flag: 56c844715f5dcc4757a3f62461b138bcd3ccab9d
+  type: static
+hints:
+- hint: This challenge will make you go after a needle in a haystack.
+  type: standard
+  cost: 0
+- hint: https://pwning.owasp-juice.shop/part2/sensitive-data-exposure.html#log-in-with-amys-original-user-credentials
+  type: standard
+  cost: 90
+hidden: false
+---
+name: Login Bender
+value: 450
+description: 'Log in with Bender''s user account. (Difficulty Level: 3)'
+category: Injection
+type: standard
+flags:
+- flag: b6a7fab9f18b83b03483b50b7efe34d36547c8fb
+  type: static
+hints:
+- hint: If you know Bender's email address, try SQL Injection. Bender's password hash
+    might not help you very much.
+  type: standard
+  cost: 0
+- hint: https://pwning.owasp-juice.shop/part2/injection.html#log-in-with-benders-user-account
+  type: standard
+  cost: 90
+hidden: false
+---
+name: Login Jim
+value: 450
+description: 'Log in with Jim''s user account. (Difficulty Level: 3)'
+category: Injection
+type: standard
+flags:
+- flag: 4f50e15c54aa72781e0311c68ecd3211a4302f5b
+  type: static
+hints:
+- hint: Try cracking Jim's password hash if you harvested it already. Alternatively,
+    if you know Jim's email address, try SQL Injection.
+  type: standard
+  cost: 0
+- hint: https://pwning.owasp-juice.shop/part2/injection.html#log-in-with-jims-user-account
+  type: standard
+  cost: 90
+hidden: false
+---
+name: Manipulate Basket
+value: 450
+description: 'Put an additional product into another user''s shopping basket. (Difficulty
+  Level: 3)'
+category: Broken Access Control
+type: standard
+flags:
+- flag: 6d2eee48dd907e6537e818fd55ff27778e5ed2fb
+  type: static
+hints:
+- hint: Have an eye on the HTTP traffic while placing products in the shopping basket.
+    Changing the quantity of products already in the basket doesn't count.
+  type: standard
+  cost: 0
+- hint: https://pwning.owasp-juice.shop/part2/broken-access-control.html#put-an-additional-product-into-another-users-shopping-basket
+  type: standard
+  cost: 90
+hidden: false
+---
+name: Payback Time
+value: 450
+description: 'Place an order that makes you rich. (Difficulty Level: 3)'
+category: Improper Input Validation
+type: standard
+flags:
+- flag: 40002146ae80e8db640dc86268ec15e994a60ab3
+  type: static
+hints:
+- hint: You literally need to make the shop owe you any amount of money.
+  type: standard
+  cost: 0
+- hint: https://pwning.owasp-juice.shop/part2/improper-input-validation.html#place-an-order-that-makes-you-rich
+  type: standard
+  cost: 90
+hidden: false
+---
+name: Privacy Policy Inspection
+value: 450
+description: 'Prove that you actually read our privacy policy. (Difficulty Level:
+  3)'
+category: Security through Obscurity
+type: standard
+flags:
+- flag: 1291a791a20236636a16e2698c0a57eff7ee7adc
+  type: static
+hints:
+- hint: Only by visiting a special URL you can confirm that you read it carefully.
+  type: standard
+  cost: 0
+- hint: https://pwning.owasp-juice.shop/part2/security-through-obscurity.html#prove-that-you-actually-read-our-privacy-policy
+  type: standard
+  cost: 90
+hidden: false
+---
+name: Product Tampering
+value: 450
+description: 'Change the <code>href</code> of the link within the <a href="/#/search?q=OWASP
+  SSL Advanced Forensic Tool (O-Saft)">OWASP SSL Advanced Forensic Tool (O-Saft)</a>
+  product description into <i>https://owasp.slack.com</i>. (Difficulty Level: 3)'
+category: Broken Access Control
+type: standard
+flags:
+- flag: 5d50520630d39bb94b716f021d4f6c6c1d010cb6
+  type: static
+hints:
+- hint: 'Look for one of the following: a) broken admin functionality, b) holes in
+    RESTful API or c) possibility for SQL Injection.'
+  type: standard
+  cost: 0
+- hint: https://pwning.owasp-juice.shop/part2/broken-access-control.html#change-the-href-of-the-link-within-the-o-saft-product-description
+  type: standard
+  cost: 90
+hidden: false
+---
+name: Reset Jim's Password
+value: 450
+description: 'Reset Jim''s password via the <a href="/#/forgot-password">Forgot Password</a>
+  mechanism with <i>the original answer</i> to his security question. (Difficulty
+  Level: 3)'
+category: Broken Authentication
+type: standard
+flags:
+- flag: b169674703dba3f9e0a76ab9742fed70d236b283
+  type: static
+hints:
+- hint: It's hard for celebrities to pick a security question from a hard-coded list
+    where the answer is not publicly exposed.
+  type: standard
+  cost: 0
+- hint: https://pwning.owasp-juice.shop/part2/broken-authentication.html#reset-jims-password-via-the-forgot-password-mechanism
+  type: standard
+  cost: 90
+hidden: false
+---
+name: Upload Size
+value: 450
+description: 'Upload a file larger than 100 kB. (Difficulty Level: 3)'
+category: Improper Input Validation
+type: standard
+flags:
+- flag: fe07aa846932c0491a88342ad0cbb953c0b34d1a
+  type: static
+hints:
+- hint: You can attach a small file to the "Complaint" form. Investigate how this
+    upload actually works.
+  type: standard
+  cost: 0
+- hint: https://pwning.owasp-juice.shop/part2/improper-input-validation.html#upload-a-file-larger-than-100-kb
+  type: standard
+  cost: 90
+hidden: false
+---
+name: Upload Type
+value: 450
+description: 'Upload a file that has no .pdf or .zip extension. (Difficulty Level:
+  3)'
+category: Improper Input Validation
+type: standard
+flags:
+- flag: 7633c6ff1c1d570c86d90d31c76e2e66a458db95
+  type: static
+hints:
+- hint: You can attach a PDF or ZIP file to the "Complaint" form. Investigate how
+    this upload actually works.
+  type: standard
+  cost: 0
+- hint: https://pwning.owasp-juice.shop/part2/improper-input-validation.html#upload-a-file-that-has-no-pdf-or-zip-extension
+  type: standard
+  cost: 90
+hidden: false
+---
+name: XXE Data Access
+value: 450
+description: 'Retrieve the content of <code>C:\Windows\system.ini</code> or <code>/etc/passwd</code>
+  from the server. <em>(This challenge is <strong>not available</strong> on Heroku!)</em>
+  (Difficulty Level: 3)'
+category: XXE
+type: standard
+flags:
+- flag: cbfa27b94e63658da69040cea897f8e5c49b9ae1
+  type: static
+hints:
+- hint: The leverage point for this challenge is the deprecated B2B interface.
+  type: standard
+  cost: 0
+- hint: https://pwning.owasp-juice.shop/part2/xxe.html#retrieve-the-content-of-cwindowssystemini-or-etcpasswd-from-the-server
+  type: standard
+  cost: 90
+hidden: false
+---
+name: Deluxe Fraud
+value: 450
+description: 'Obtain a Deluxe Membership without paying for it. (Difficulty Level:
+  3)'
+category: Improper Input Validation
+type: standard
+flags:
+- flag: 74b3059e6fb0c566bdc5547a76107375248b1f06
+  type: static
+hints:
+- hint: Look closely at what happens when you attempt to upgrade your account.
+  type: standard
+  cost: 0
+- hint: https://pwning.owasp-juice.shop/part2/improper-input-validation.html#obtain-a-deluxe-membership-without-paying-for-it
+  type: standard
+  cost: 90
+hidden: false
+---
+name: CSRF
+value: 450
+description: 'Change the name of a user by performing Cross-Site Request Forgery from
+  <a href="http://htmledit.squarefree.com">another origin</a>. (Difficulty Level:
+  3)'
+category: Broken Access Control
+type: standard
+flags:
+- flag: 611f5f00ec968b0cb8702eaace4c207ad05b09c7
+  type: static
+hints:
+- hint: Find a form which updates the username and then construct a malicious page
+    in the online HTML editor.
+  type: standard
+  cost: 0
+- hint: https://pwning.owasp-juice.shop/part2/broken-access-control.html#change-the-name-of-a-user-by-performing-cross-site-request-forgery-from-another-origin
+  type: standard
+  cost: 90
+hidden: false
+---
+name: Access Log
+value: 700
+description: 'Gain access to any access log file of the server. (Difficulty Level:
+  4)'
+category: Sensitive Data Exposure
+type: standard
+flags:
+- flag: 2cb9cab1bf8096d3523c874da89cdcd8d29557e5
+  type: static
+hints:
+- hint: Who would want a server access log to be accessible through a web application?
+  type: standard
+  cost: 0
+- hint: https://pwning.owasp-juice.shop/part2/sensitive-data-exposure.html#gain-access-to-any-access-log-file-of-the-server
+  type: standard
+  cost: 140
+hidden: false
+---
+name: Christmas Special
+value: 700
+description: 'Order the Christmas special offer of 2014. (Difficulty Level: 4)'
+category: Injection
+type: standard
+flags:
+- flag: e40824dcf82338c2150a05d61fdf236a5c5a44e5
+  type: static
+hints:
+- hint: Find out how the application handles unavailable products and try to find
+    a loophole.
+  type: standard
+  cost: 0
+- hint: https://pwning.owasp-juice.shop/part2/injection.html#order-the-christmas-special-offer-of-2014
+  type: standard
+  cost: 140
+hidden: false
+---
+name: CSP Bypass
+value: 700
+description: 'Bypass the Content Security Policy and perform an XSS attack with <code>&lt;script&gt;alert(&#x60;xss&#x60;)&lt;/script&gt;</code>
+  on a legacy page within the application. <em>(This challenge is <strong>not available</strong>
+  on Heroku!)</em> (Difficulty Level: 4)'
+category: XSS
+type: standard
+flags:
+- flag: 50ba9f3f269ed07e8f9c5c39e254ac01759c9056
+  type: static
+hints:
+- hint: What is even "better" than a legacy page with a homegrown RegEx sanitizer?
+    Having CSP injection issues on the exact same page as well!
+  type: standard
+  cost: 0
+- hint: https://pwning.owasp-juice.shop/part2/xss.html#bypass-the-content-security-policy-and-perform-an-xss-attack-on-a-legacy-page
+  type: standard
+  cost: 140
+hidden: false
+---
+name: Easter Egg
+value: 700
+description: 'Find the hidden <a href="http://en.wikipedia.org/wiki/Easter_egg_(media)"
+  target="_blank">easter egg</a>. (Difficulty Level: 4)'
+category: Broken Access Control
+type: standard
+flags:
+- flag: 4540491b987948ca8e39e179640b4368d0ea2d23
+  type: static
+hints:
+- hint: If you solved one of the three file access challenges, you already know where
+    to find the easter egg.
+  type: standard
+  cost: 0
+- hint: https://pwning.owasp-juice.shop/part2/broken-access-control.html#find-the-hidden-easter-egg
+  type: standard
+  cost: 140
+hidden: false
+---
+name: Ephemeral Accountant
+value: 700
+description: 'Log in with the (non-existing) accountant <i>acc0unt4nt@juice-sh.op</i>
+  without ever registering that user. (Difficulty Level: 4)'
+category: Injection
+type: standard
+flags:
+- flag: 68e726fd7fbbfb13f9494f1b139a44e5146c69d0
+  type: static
+hints:
+- hint: Try to create the needed user "out of thin air".
+  type: standard
+  cost: 0
+- hint: https://pwning.owasp-juice.shop/part2/injection.html#log-in-with-the-non-existing-accountant-without-ever-registering-that-user
+  type: standard
+  cost: 140
+hidden: false
+---
+name: Expired Coupon
+value: 700
+description: 'Successfully redeem an expired campaign coupon code. (Difficulty Level:
+  4)'
+category: Improper Input Validation
+type: standard
+flags:
+- flag: cb507188e48152b232c1ebd67aa0420eb36611b7
+  type: static
+hints:
+- hint: Try to identify past special event or holiday campaigns of the shop first.
+  type: standard
+  cost: 0
+- hint: https://pwning.owasp-juice.shop/part2/improper-input-validation.html#successfully-redeem-an-expired-campaign-coupon-code
+  type: standard
+  cost: 140
+hidden: false
+---
+name: Forgotten Developer Backup
+value: 700
+description: 'Access a developer''s forgotten backup file. (Difficulty Level: 4)'
+category: Sensitive Data Exposure
+type: standard
+flags:
+- flag: 04b0e203aa4a9474e7e0f9d373b857bcdcdbec6e
+  type: static
+hints:
+- hint: You need to trick a security mechanism into thinking that the file you want
+    has a valid file type.
+  type: standard
+  cost: 0
+- hint: https://pwning.owasp-juice.shop/part2/sensitive-data-exposure.html#access-a-developers-forgotten-backup-file
+  type: standard
+  cost: 140
+hidden: false
+---
+name: Forgotten Sales Backup
+value: 700
+description: 'Access a salesman''s forgotten backup file. (Difficulty Level: 4)'
+category: Sensitive Data Exposure
+type: standard
+flags:
+- flag: 7d5012d0d3ca68d07251e93621ba0f0922a57e2f
+  type: static
+hints:
+- hint: You need to trick a security mechanism into thinking that the file you want
+    has a valid file type.
+  type: standard
+  cost: 0
+- hint: https://pwning.owasp-juice.shop/part2/sensitive-data-exposure.html#access-a-salesmans-forgotten-backup-file
+  type: standard
+  cost: 140
+hidden: false
+---
+name: GDPR Data Theft
+value: 700
+description: 'Steal someone else''s personal data without using Injection. (Difficulty
+  Level: 4)'
+category: Sensitive Data Exposure
+type: standard
+flags:
+- flag: 3ccebf737bcf3b6e61fff6e37e8a9f6f1a2eb509
+  type: static
+hints:
+- hint: Trick the regular Data Export to give you more than actually belongs to you.
+  type: standard
+  cost: 0
+- hint: https://pwning.owasp-juice.shop/part2/sensitive-data-exposure.html#steal-someone-elses-personal-data-without-using-injection
+  type: standard
+  cost: 140
+hidden: false
+---
+name: HTTP-Header XSS
+value: 700
+description: 'Perform a <i>persisted</i> XSS attack with <code>&lt;iframe src="javascript:alert(&#x60;xss&#x60;)"&gt;</code>
+  through an HTTP header. <em>(This challenge is <strong>not available</strong> on
+  Heroku!)</em> (Difficulty Level: 4)'
+category: XSS
+type: standard
+flags:
+- flag: 5b8b534955035bec367e60afa7db42d2387a9f0c
+  type: static
+hints:
+- hint: Finding a piece of displayed information that could originate from an HTTP
+    header is part of this challenge.
+  type: standard
+  cost: 0
+- hint: https://pwning.owasp-juice.shop/part2/xss.html#perform-a-persisted-xss-attack-through-an-http-header
+  type: standard
+  cost: 140
+hidden: false
+---
+name: Leaked Unsafe Product
+value: 700
+description: 'Identify an unsafe product that was removed from the shop and <a href="/#/contact">inform
+  the shop</a> which ingredients are dangerous. (Difficulty Level: 4)'
+category: Sensitive Data Exposure
+type: standard
+flags:
+- flag: f44df637578bbcee6e662d6c8b4ca5ec7d9c3c16
+  type: static
+hints:
+- hint: Your own SQLi and someone else's Ctrl-V will be your accomplices in this challenge!
+  type: standard
+  cost: 0
+- hint: https://pwning.owasp-juice.shop/part2/sensitive-data-exposure.html#identify-an-unsafe-product-that-was-removed-from-the-shop-and-inform-the-shop-which-ingredients-are-dangerous
+  type: standard
+  cost: 140
+hidden: false
+---
+name: Legacy Typosquatting
+value: 700
+description: '<a href="/#/contact">Inform the shop</a> about a <i>typosquatting</i>
+  trick it has been a victim of at least in <code>v6.2.0-SNAPSHOT</code>. (Mention
+  the exact name of the culprit) (Difficulty Level: 4)'
+category: Vulnerable Components
+type: standard
+flags:
+- flag: 235663ee02cdecae669e822399629fbce4a3131c
+  type: static
+hints:
+- hint: This challenge has nothing to do with mistyping web domains. Investigate the
+    forgotten developer's backup file instead.
+  type: standard
+  cost: 0
+- hint: https://pwning.owasp-juice.shop/part2/vulnerable-components.html#inform-the-shop-about-a-typosquatting-trick-it-has-been-a-victim-of
+  type: standard
+  cost: 140
+hidden: false
+---
+name: Login Bjoern
+value: 700
+description: 'Log in with Bjoern''s Gmail account <i>without</i> previously changing
+  his password, applying SQL Injection, or hacking his Google account. (Difficulty
+  Level: 4)'
+category: Broken Authentication
+type: standard
+flags:
+- flag: f18dd672d39f7a3935cc17ac14251143870d8867
+  type: static
+hints:
+- hint: The security flaw behind this challenge is 100% OWASP Juice Shop's fault and
+    0% Google's.
+  type: standard
+  cost: 0
+- hint: https://pwning.owasp-juice.shop/part2/broken-authentication.html#log-in-with-bjoerns-gmail-account
+  type: standard
+  cost: 140
+hidden: false
+---
+name: Misplaced Signature File
+value: 700
+description: 'Access a misplaced <a href="https://github.com/Neo23x0/sigma">SIEM signature</a>
+  file. (Difficulty Level: 4)'
+category: Sensitive Data Exposure
+type: standard
+flags:
+- flag: 97b78b818380a533d4ecbcc16740d62b81b44a44
+  type: static
+hints:
+- hint: You need to trick a security mechanism into thinking that the file you want
+    has a valid file type.
+  type: standard
+  cost: 0
+- hint: https://pwning.owasp-juice.shop/part2/sensitive-data-exposure.html#access-a-misplaced-siem-signature-file
+  type: standard
+  cost: 140
+hidden: false
+---
+name: Nested Easter Egg
+value: 700
+description: 'Apply some advanced cryptanalysis to find <i>the real</i> easter egg.
+  (Difficulty Level: 4)'
+category: Cryptographic Issues
+type: standard
+flags:
+- flag: f684251b4b1c2c9a15a5be32b9cd5c7c0e388345
+  type: static
+hints:
+- hint: You might have to peel through several layers of tough-as-nails encryption
+    for this challenge.
+  type: standard
+  cost: 0
+- hint: https://pwning.owasp-juice.shop/part2/cryptographic-issues.html#apply-some-advanced-cryptanalysis-to-find-the-real-easter-egg
+  type: standard
+  cost: 140
+hidden: false
+---
+name: NoSQL DoS
+value: 700
+description: 'Let the server sleep for some time. (It has done more than enough hard
+  work for you) <em>(This challenge is <strong>not available</strong> on Heroku!)</em>
+  (Difficulty Level: 4)'
+category: Injection
+type: standard
+flags:
+- flag: 1c463fd04c00e9926256d957f3aa473017c253c6
+  type: static
+hints:
+- hint: This challenge is essentially a stripped-down Denial of Service (DoS) attack.
+  type: standard
+  cost: 0
+- hint: https://pwning.owasp-juice.shop/part2/injection.html#let-the-server-sleep-for-some-time
+  type: standard
+  cost: 140
+hidden: false
+---
+name: NoSQL Manipulation
+value: 700
+description: 'Update multiple product reviews at the same time. (Difficulty Level:
+  4)'
+category: Injection
+type: standard
+flags:
+- flag: cb6bc8501f750b120e677bef252c68f4866a0e1e
+  type: static
+hints:
+- hint: Take a close look on how the equivalent of UPDATE-statements in MongoDB work.
+  type: standard
+  cost: 0
+- hint: https://pwning.owasp-juice.shop/part2/injection.html#update-multiple-product-reviews-at-the-same-time
+  type: standard
+  cost: 140
+hidden: false
+---
+name: Reset Bender's Password
+value: 700
+description: 'Reset Bender''s password via the <a href="/#/forgot-password">Forgot
+  Password</a> mechanism with <i>the original answer</i> to his security question.
+  (Difficulty Level: 4)'
+category: Broken Authentication
+type: standard
+flags:
+- flag: 0338aaff4d43ad389c653d6199e21c92637d8659
+  type: static
+hints:
+- hint: Not as trivial as Jim's but still not too difficult with some "Futurama" background
+    knowledge.
+  type: standard
+  cost: 0
+- hint: https://pwning.owasp-juice.shop/part2/broken-authentication.html#reset-benders-password-via-the-forgot-password-mechanism
+  type: standard
+  cost: 140
+hidden: false
+---
+name: Server-side XSS Protection
+value: 700
+description: 'Perform a <i>persisted</i> XSS attack with <code>&lt;iframe src="javascript:alert(&#x60;xss&#x60;)"&gt;</code>
+  bypassing a <i>server-side</i> security mechanism. <em>(This challenge is <strong>not
+  available</strong> on Heroku!)</em> (Difficulty Level: 4)'
+category: XSS
+type: standard
+flags:
+- flag: db18ec7d85406aa6c2f8c8d685507693bdd76ac6
+  type: static
+hints:
+- hint: The "Comment" field in the "Customer Feedback" screen is where you want to
+    put your focus on.
+  type: standard
+  cost: 0
+- hint: https://pwning.owasp-juice.shop/part2/xss.html#perform-a-persisted-xss-attack-bypassing-a-server-side-security-mechanism
+  type: standard
+  cost: 140
+hidden: false
+---
+name: Steganography
+value: 700
+description: '<a href="/#/contact">Rat out</a> a notorious character hiding in plain
+  sight in the shop. (Mention the exact name of the character) (Difficulty Level:
+  4)'
+category: Security through Obscurity
+type: standard
+flags:
+- flag: 6df11ed5b9295b991958439c5598c30a820c8ba8
+  type: static
+hints:
+- hint: No matter how good your eyes are, you will need tool assistance for this challenge.
+  type: standard
+  cost: 0
+- hint: https://pwning.owasp-juice.shop/part2/security-through-obscurity.html#rat-out-a-notorious-character-hiding-in-plain-sight-in-the-shop
+  type: standard
+  cost: 140
+hidden: false
+---
+name: User Credentials
+value: 700
+description: 'Retrieve a list of all user credentials via SQL Injection. (Difficulty
+  Level: 4)'
+category: Injection
+type: standard
+flags:
+- flag: 05fba1687d67dea0be32c37e7836621282aa3c4b
+  type: static
+hints:
+- hint: Gather information on where user data is stored and how it is addressed. Then
+    craft a corresponding UNION SELECT attack.
+  type: standard
+  cost: 0
+- hint: https://pwning.owasp-juice.shop/part2/injection.html#retrieve-a-list-of-all-user-credentials-via-sql-injection
+  type: standard
+  cost: 140
+hidden: false
+---
+name: Vulnerable Library
+value: 700
+description: '<a href="/#/contact">Inform the shop</a> about a vulnerable library
+  it is using. (Mention the exact library name and version in your comment) (Difficulty
+  Level: 4)'
+category: Vulnerable Components
+type: standard
+flags:
+- flag: caf00e67e2d7be276cbcdb96ac3ff5eafca4d4f8
+  type: static
+hints:
+- hint: Report one of two possible answers via the "Customer Feedback" form. Do not
+    forget to submit the library's version as well.
+  type: standard
+  cost: 0
+- hint: https://pwning.owasp-juice.shop/part2/vulnerable-components.html#inform-the-shop-about-a-vulnerable-library-it-is-using
+  type: standard
+  cost: 140
+hidden: false
+---
+name: Whitelist Bypass
+value: 700
+description: 'Enforce a redirect to a page you are not supposed to redirect to. (Difficulty
+  Level: 4)'
+category: Unvalidated Redirects
+type: standard
+flags:
+- flag: d2b3630ea3ae48a2e2d098f677474b0c967de947
+  type: static
+hints:
+- hint: You have to find a way to beat the whitelist of allowed redirect URLs.
+  type: standard
+  cost: 0
+- hint: https://pwning.owasp-juice.shop/part2/unvalidated-redirects.html#enforce-a-redirect-to-a-page-you-are-not-supposed-to-redirect-to
+  type: standard
+  cost: 140
+hidden: false
+---
+name: Reset Uvogin's Password
+value: 700
+description: 'Reset Uvogin''s password via the <a href="/#/forgot-password">Forgot
+  Password</a> mechanism with <i>the original answer</i> to his security question.
+  (Difficulty Level: 4)'
+category: Sensitive Data Exposure
+type: standard
+flags:
+- flag: 7e90be698f8424ff222b64e73695393dd5edbc75
+  type: static
+hints:
+- hint: You might have to do some OSINT on his social media personas to find out his
+    honest answer to the security question.
+  type: standard
+  cost: 0
+- hint: https://pwning.owasp-juice.shop/part2/sensitive-data-exposure.html#reset-uvogins-password-via-the-forgot-password-mechanism
+  type: standard
+  cost: 140
+hidden: false
+---
+name: Poison Null Byte
+value: 700
+description: 'Bypass a security control with a <a href="http://hakipedia.com/index.php/Poison_Null_Byte">Poison
+  Null Byte</a> to access a file not meant for your eyes. (Difficulty Level: 4)'
+category: Improper Input Validation
+type: standard
+flags:
+- flag: e0410295f374e3bcaf989fcb51b77279442cae44
+  type: static
+hints:
+- hint: Take a look at the details in the photo to determine the location of where
+    it was taken.
+  type: standard
+  cost: 0
+- hint: https://pwning.owasp-juice.shop/part2/improper-input-validation.html#bypass-a-security-control-with-a-poison-null-byte
+  type: standard
+  cost: 140
+hidden: false
+---
+name: Blockchain Hype
+value: 1000
+description: 'Learn about the Token Sale before its official announcement. (Difficulty
+  Level: 5)'
+category: Security through Obscurity
+type: standard
+flags:
+- flag: 2aa4d54ba111b45d8b0b2aa5366f4a7fffa2c705
+  type: static
+hints:
+- hint: The developers truly believe in "Security through Obscurity" over actual access
+    restrictions.
+  type: standard
+  cost: 0
+- hint: https://pwning.owasp-juice.shop/part2/security-through-obscurity.html#learn-about-the-token-sale-before-its-official-announcement
+  type: standard
+  cost: 200
+hidden: false
+---
+name: Blocked RCE DoS
+value: 1000
+description: 'Perform a Remote Code Execution that would keep a less hardened application
+  busy <em>forever</em>. <em>(This challenge is <strong>not available</strong> on
+  Heroku!)</em> (Difficulty Level: 5)'
+category: Insecure Deserialization
+type: standard
+flags:
+- flag: cab1ad2c71f55c38e8b0bdf2982592119f7c6f08
+  type: static
+hints:
+- hint: The feature you need to exploit for this challenge is not directly advertised
+    anywhere.
+  type: standard
+  cost: 0
+- hint: https://pwning.owasp-juice.shop/part2/insecure-deserialization.html#perform-a-remote-code-execution-that-would-keep-a-less-hardened-application-busy-forever
+  type: standard
+  cost: 200
+hidden: false
+---
+name: Change Bender's Password
+value: 1000
+description: 'Change Bender''s password into <i>slurmCl4ssic</i> without using SQL
+  Injection or Forgot Password. (Difficulty Level: 5)'
+category: Broken Authentication
+type: standard
+flags:
+- flag: 854a997e19fa94a1ca985809c39dc46b70a0b13b
+  type: static
+hints:
+- hint: In previous releases this challenge was wrongly accused of being based on
+    CSRF.
+  type: standard
+  cost: 0
+- hint: https://pwning.owasp-juice.shop/part2/broken-authentication.html#change-benders-password-into-slurmcl4ssic-without-using-sql-injection-or-forgot-password
+  type: standard
+  cost: 200
+hidden: false
+---
+name: Email Leak
+value: 1000
+description: 'Perform an unwanted information disclosure by accessing data cross-domain.
+  (Difficulty Level: 5)'
+category: Sensitive Data Exposure
+type: standard
+flags:
+- flag: 07272479a3753eac68d546770d7658e9460c0019
+  type: static
+hints:
+- hint: Try to find and attack an endpoint that responds with user information. SQL
+    Injection is not the solution here.
+  type: standard
+  cost: 0
+- hint: https://pwning.owasp-juice.shop/part2/sensitive-data-exposure.html#perform-an-unwanted-information-disclosure-by-accessing-data-cross-domain
+  type: standard
+  cost: 200
+hidden: false
+---
+name: Extra Language
+value: 1000
+description: 'Retrieve the language file that never made it into production. (Difficulty
+  Level: 5)'
+category: Broken Anti Automation
+type: standard
+flags:
+- flag: 7b603bf8fd4b4ba0336e4f34bf006437c7ba3063
+  type: static
+hints:
+- hint: Brute force is not the only option for this challenge, but a perfectly viable
+    one.
+  type: standard
+  cost: 0
+- hint: https://pwning.owasp-juice.shop/part2/broken-anti-automation.html#retrieve-the-language-file-that-never-made-it-into-production
+  type: standard
+  cost: 200
+hidden: false
+---
+name: Frontend Typosquatting
+value: 1000
+description: '<a href="/#/contact">Inform the shop</a> about a <i>typosquatting</i>
+  imposter that dug itself deep into the frontend. (Mention the exact name of the
+  culprit) (Difficulty Level: 5)'
+category: Vulnerable Components
+type: standard
+flags:
+- flag: f5c9249141775174e591db1e64977f63066d4739
+  type: static
+hints:
+- hint: This challenge has nothing to do with mistyping web domains. There is no conveniently
+    misplaced file helping you with this one either. Or is there?
+  type: standard
+  cost: 0
+- hint: https://pwning.owasp-juice.shop/part2/vulnerable-components.html#inform-the-shop-about-a-typosquatting-imposter-that-dug-itself-deep-into-the-frontend
+  type: standard
+  cost: 200
+hidden: false
+---
+name: Leaked Access Logs
+value: 1000
+description: 'Dumpster dive the Internet for a leaked password and log in to the original
+  user account it belongs to. (Creating a new account with the same password does
+  not qualify as a solution.) (Difficulty Level: 5)'
+category: Sensitive Data Exposure
+type: standard
+flags:
+- flag: 14291774277b437d770ac8680a88f10dd92112f9
+  type: static
+hints:
+- hint: Once you have it, a technique called "Password Spraying" might prove useful.
+  type: standard
+  cost: 0
+- hint: https://pwning.owasp-juice.shop/part2/sensitive-data-exposure.html#dumpster-dive-the-internet-for-a-leaked-password-and-log-in-to-the-original-user-account-it-belongs-to
+  type: standard
+  cost: 200
+hidden: false
+---
+name: Login CISO
+value: 1000
+description: 'Exploit OAuth 2.0 to log in with the Chief Information Security Officer''s
+  user account. (Difficulty Level: 5)'
+category: Broken Authentication
+type: standard
+flags:
+- flag: 76065ba150ff54a2f91625d896272ff7a2a89390
+  type: static
+hints:
+- hint: Don't try to beat Google's OAuth 2.0 service. Rather investigate implementation
+    flaws on OWASP Juice Shop's end.
+  type: standard
+  cost: 0
+- hint: https://pwning.owasp-juice.shop/part2/broken-authentication.html#exploit-oauth-20-to-log-in-with-the-cisos-user-account
+  type: standard
+  cost: 200
+hidden: false
+---
+name: NoSQL Exfiltration
+value: 1000
+description: 'All your orders are belong to us! Even the ones which don''t. <em>(This
+  challenge is <strong>not available</strong> on Heroku!)</em> (Difficulty Level:
+  5)'
+category: Injection
+type: standard
+flags:
+- flag: b7eb702766e3bf1412223251e8e8424fbea862e1
+  type: static
+hints:
+- hint: Take a close look on how the $where query operator works in MongoDB.
+  type: standard
+  cost: 0
+- hint: https://pwning.owasp-juice.shop/part2/injection.html#all-your-orders-are-belong-to-us
+  type: standard
+  cost: 200
+hidden: false
+---
+name: Reset Bjoern's Password
+value: 1000
+description: 'Reset the password of Bjoern''s internal account via the <a href="/#/forgot-password">Forgot
+  Password</a> mechanism with <i>the original answer</i> to his security question.
+  (Difficulty Level: 5)'
+category: Broken Authentication
+type: standard
+flags:
+- flag: 7b52275f0752b48c7ecb4cd254359663e36b9f68
+  type: static
+hints:
+- hint: Nothing a little bit of Facebook stalking couldn't reveal. Might involve a
+    historical twist.
+  type: standard
+  cost: 0
+- hint: https://pwning.owasp-juice.shop/part2/broken-authentication.html#reset-the-password-of-bjoerns-internal-account-via-the-forgot-password-mechanism
+  type: standard
+  cost: 200
+hidden: false
+---
+name: Reset Morty's Password
+value: 1000
+description: 'Reset Morty''s password via the <a href="/#/forgot-password">Forgot
+  Password</a> mechanism with <i>his obfuscated answer</i> to his security question.
+  (Difficulty Level: 5)'
+category: Broken Anti Automation
+type: standard
+flags:
+- flag: 607203a27825ddfd19205d25c7d31dcc1f377f46
+  type: static
+hints:
+- hint: Find a way to bypass the rate limiting and brute force the obfuscated answer
+    to Morty's security question.
+  type: standard
+  cost: 0
+- hint: https://pwning.owasp-juice.shop/part2/broken-anti-automation.html#reset-mortys-password-via-the-forgot-password-mechanism
+  type: standard
+  cost: 200
+hidden: false
+---
+name: Retrieve Blueprint
+value: 1000
+description: 'Deprive the shop of earnings by downloading the blueprint for one of
+  its products. (Difficulty Level: 5)'
+category: Sensitive Data Exposure
+type: standard
+flags:
+- flag: 7908fd29e76493a6f5f21d6e83b0b2ebeaf81e58
+  type: static
+hints:
+- hint: The product you might want to give a closer look is the OWASP Juice Shop Logo
+    (3D-printed).
+  type: standard
+  cost: 0
+- hint: https://pwning.owasp-juice.shop/part2/sensitive-data-exposure.html#deprive-the-shop-of-earnings-by-downloading-the-blueprint-for-one-of-its-products
+  type: standard
+  cost: 200
+hidden: false
+---
+name: Supply Chain Attack
+value: 1000
+description: '<a href="/#/contact">Inform the development team</a> about a danger
+  to some of <em>their</em> credentials. (Send them the URL of the <em>original report</em>
+  or an assigned CVE or another identifier of this vulnerability) (Difficulty Level:
+  5)'
+category: Vulnerable Components
+type: standard
+flags:
+- flag: fb3169d941bd2fe2ccc1d49edaea110a7f27cc10
+  type: static
+hints:
+- hint: This vulnerability will not affect any customer of the shop. It is aimed exclusively
+    at its developers.
+  type: standard
+  cost: 0
+- hint: https://pwning.owasp-juice.shop/part2/vulnerable-components.html#inform-the-development-team-about-a-danger-to-some-of-their-credentials
+  type: standard
+  cost: 200
+hidden: false
+---
+name: Two Factor Authentication
+value: 1000
+description: 'Solve the 2FA challenge for user "wurstbrot". (Disabling, bypassing
+  or overwriting his 2FA settings does not count as a solution) (Difficulty Level:
+  5)'
+category: Broken Authentication
+type: standard
+flags:
+- flag: b32dcb741100cc31420d6182f38d2e33f3ac1af7
+  type: static
+hints:
+- hint: The 2FA implementation requires to store a secret for every user. You will
+    need to find a way to access this secret in order to solve this challenge.
+  type: standard
+  cost: 0
+- hint: https://pwning.owasp-juice.shop/part2/broken-authentication.html#solve-the-2fa-challenge-for-user-wurstbrot
+  type: standard
+  cost: 200
+hidden: false
+---
+name: Unsigned JWT
+value: 1000
+description: 'Forge an essentially unsigned JWT token that impersonates the (non-existing)
+  user <i>jwtn3d@juice-sh.op</i>. (Difficulty Level: 5)'
+category: Vulnerable Components
+type: standard
+flags:
+- flag: c3cef3271ed97f63fb2001b7c5f984a13b5f7dce
+  type: static
+hints:
+- hint: This challenge exploits a weird option that is supported when signing tokens
+    with JWT.
+  type: standard
+  cost: 0
+- hint: https://pwning.owasp-juice.shop/part2/vulnerable-components.html#forge-an-essentially-unsigned-jwt-token
+  type: standard
+  cost: 200
+hidden: false
+---
+name: XXE DoS
+value: 1000
+description: 'Give the server something to chew on for quite a while. <em>(This challenge
+  is <strong>not available</strong> on Heroku!)</em> (Difficulty Level: 5)'
+category: XXE
+type: standard
+flags:
+- flag: 98c86726bddc9a78cd26a550a8bf4caac7753710
+  type: static
+hints:
+- hint: It is not as easy as sending a large amount of data directly to the deprecated
+    B2B interface.
+  type: standard
+  cost: 0
+- hint: https://pwning.owasp-juice.shop/part2/xxe.html#give-the-server-something-to-chew-on-for-quite-a-while
+  type: standard
+  cost: 200
+hidden: false
+---
+name: Cross-Site Imaging
+value: 1000
+description: 'Stick <a href="http://placekitten.com/" target="_blank">cute cross-domain
+  kittens</a> all over our delivery boxes. (Difficulty Level: 5)'
+category: Security Misconfiguration
+type: standard
+flags:
+- flag: 183fe00f01e37b305e3d2babb768c541157450b7
+  type: static
+hints:
+- hint: This challenge would formally have to be in several categories as the developers
+    made multiple gaffes for this to be possible.
+  type: standard
+  cost: 0
+- hint: https://pwning.owasp-juice.shop/part2/injection.html#stick-cute-cross-domain-kittens-all-over-our-delivery-boxes
+  type: standard
+  cost: 200
+hidden: false
+---
+name: Kill Chatbot
+value: 1000
+description: 'Permanently disable the support chatbot so that it can no longer answer
+  customer queries. (Difficulty Level: 5)'
+category: Vulnerable Components
+type: standard
+flags:
+- flag: ce7205b4f72d904a9b556a9a7789f282d82f48d5
+  type: static
+hints:
+- hint: Think of a way to get a hold of the internal workings on the chatbot API.
+  type: standard
+  cost: 0
+- hint: https://pwning.owasp-juice.shop/part2/improper-input-validation.html#permanently-disable-the-support-chatbot
+  type: standard
+  cost: 200
+hidden: false
+---
+name: Arbitrary File Write
+value: 1350
+description: 'Overwrite the <a href="/ftp/legal.md">Legal Information</a> file. <em>(This
+  challenge is <strong>not available</strong> on Heroku!)</em> (Difficulty Level:
+  6)'
+category: Vulnerable Components
+type: standard
+flags:
+- flag: d64be91f6fea96b60e986d6350635666867f99ab
+  type: static
+hints:
+- hint: Look out for a tweet praising new functionality of the web shop. Then find
+    a third party vulnerability associated with it.
+  type: standard
+  cost: 0
+- hint: https://pwning.owasp-juice.shop/part2/vulnerable-components.html#overwrite-the-legal-information-file
+  type: standard
+  cost: 270
+hidden: false
+---
+name: Forged Coupon
+value: 1350
+description: 'Forge a coupon code that gives you a discount of at least 80%. (Difficulty
+  Level: 6)'
+category: Cryptographic Issues
+type: standard
+flags:
+- flag: 7f5a0f572f6ba17127279c6a899e82ea8b0dea3d
+  type: static
+hints:
+- hint: Try either a) a knowledgable brute force attack or b) reverse engineering
+    or c) some research in the cloud.
+  type: standard
+  cost: 0
+- hint: https://pwning.owasp-juice.shop/part2/cryptographic-issues.html#forge-a-coupon-code-that-gives-you-a-discount-of-at-least-80
+  type: standard
+  cost: 270
+hidden: false
+---
+name: Forged Signed JWT
+value: 1350
+description: 'Forge an almost properly RSA-signed JWT token that impersonates the
+  (non-existing) user <i>rsa_lord@juice-sh.op</i>. (Difficulty Level: 6)'
+category: Vulnerable Components
+type: standard
+flags:
+- flag: 882c835d350cfc215b7281ddcc17cf333ae0dc91
+  type: static
+hints:
+- hint: This challenge is explicitly not about acquiring the RSA private key used
+    for JWT signing.
+  type: standard
+  cost: 0
+- hint: https://pwning.owasp-juice.shop/part2/vulnerable-components.html#forge-an-almost-properly-rsa-signed-jwt-token
+  type: standard
+  cost: 270
+hidden: false
+---
+name: Imaginary Challenge
+value: 1350
+description: 'Solve challenge #999. Unfortunately, this challenge does not exist.
+  (Difficulty Level: 6)'
+category: Cryptographic Issues
+type: standard
+flags:
+- flag: cb2c4d6f2c98a1e22c5a8b62e65bcfccae992af2
+  type: static
+hints:
+- hint: 'You need to trick the hacking progress persistence feature into thinking
+    you solved challenge #999.'
+  type: standard
+  cost: 0
+- hint: https://pwning.owasp-juice.shop/part2/cryptographic-issues.html#solve-challenge-999
+  type: standard
+  cost: 270
+hidden: false
+---
+name: Login Support Team
+value: 1350
+description: 'Log in with the support team''s original user credentials without applying
+  SQL Injection or any other bypass. (Difficulty Level: 6)'
+category: Security Misconfiguration
+type: standard
+flags:
+- flag: 187b24479931550fbbe0cec817ee860292a46780
+  type: static
+hints:
+- hint: The underlying flaw of this challenge is a lot more human error than technical
+    weakness.
+  type: standard
+  cost: 0
+- hint: https://pwning.owasp-juice.shop/part2/security-misconfiguration.html#log-in-with-the-support-teams-original-user-credentials
+  type: standard
+  cost: 270
+hidden: false
+---
+name: Multiple Likes
+value: 1350
+description: 'Like any review at least three times as the same user. (Difficulty Level:
+  6)'
+category: Broken Anti Automation
+type: standard
+flags:
+- flag: a09fba1ad04c1f9c308a2cb5e52a4e81262b2921
+  type: static
+hints:
+- hint: Punctuality is the politeness of kings.
+  type: standard
+  cost: 0
+- hint: https://pwning.owasp-juice.shop/part2/broken-anti-automation.html#like-any-review-at-least-three-times-as-the-same-user
+  type: standard
+  cost: 270
+hidden: false
+---
+name: Premium Paywall
+value: 1350
+description: '<i class="far fa-gem"></i><i class="far fa-gem"></i><i class="far fa-gem"></i><i
+  class="far fa-gem"></i><i class="far fa-gem"></i><!--IvLuRfBJYlmStf9XfL6ckJFngyd9LfV1JaaN/KRTPQPidTuJ7FR+D/nkWJUF+0xUF07CeCeqYfxq+OJVVa0gNbqgYkUNvn//UbE7e95C+6e+7GtdpqJ8mqm4WcPvUGIUxmGLTTAC2+G9UuFCD1DUjg==-->
+  <a href="https://blockchain.info/address/1AbKfgvw9psQ41NbLi8kufDQTezwG8DRZm" target="_blank"><i
+  class="fab fa-btc fa-sm"></i> Unlock Premium Challenge</a> to access exclusive content.
+  (Difficulty Level: 6)'
+category: Cryptographic Issues
+type: standard
+flags:
+- flag: 582e6216cefbd45ca57182b4d94d1e243c065219
+  type: static
+hints:
+- hint: You do not have to pay anything to unlock this challenge! Nonetheless, donations
+    are very much appreciated.
+  type: standard
+  cost: 0
+- hint: https://pwning.owasp-juice.shop/part2/cryptographic-issues.html#unlock-premium-challenge-to-access-exclusive-content
+  type: standard
+  cost: 270
+hidden: false
+---
+name: SSRF
+value: 1350
+description: 'Request a hidden resource on server through server. (Difficulty Level:
+  6)'
+category: Broken Access Control
+type: standard
+flags:
+- flag: 3167e81868e9d4b6e7777bd5beb61d8ba1026a74
+  type: static
+hints:
+- hint: Reverse engineering something bad can make good things happen.
+  type: standard
+  cost: 0
+- hint: https://pwning.owasp-juice.shop/part2/broken-access-control.html#request-a-hidden-resource-on-server-through-server
+  type: standard
+  cost: 270
+hidden: false
+---
+name: SSTi
+value: 1350
+description: 'Infect the server with juicy malware by abusing arbitrary command execution.
+  <em>(This challenge is <strong>not available</strong> on Heroku!)</em> (Difficulty
+  Level: 6)'
+category: Injection
+type: standard
+flags:
+- flag: 16f18415e9f08b17233599e8e08c786e4dcc9a10
+  type: static
+hints:
+- hint: '"SSTi" is a clear indicator that this has nothing to do with anything Angular.
+    Also, make sure to use only our non-malicious malware.'
+  type: standard
+  cost: 0
+- hint: https://pwning.owasp-juice.shop/part2/injection.html#infect-the-server-with-juicy-malware-by-abusing-arbitrary-command-execution
+  type: standard
+  cost: 270
+hidden: false
+---
+name: Successful RCE DoS
+value: 1350
+description: 'Perform a Remote Code Execution that occupies the server for a while
+  without using infinite loops. <em>(This challenge is <strong>not available</strong>
+  on Heroku!)</em> (Difficulty Level: 6)'
+category: Insecure Deserialization
+type: standard
+flags:
+- flag: d1161612eaceb38b60757f8e075b233ebe9a83f2
+  type: static
+hints:
+- hint: Your attack payload must not trigger the protection against too many iterations.
+  type: standard
+  cost: 0
+- hint: https://pwning.owasp-juice.shop/part2/insecure-deserialization.html#perform-a-remote-code-execution-that-occupies-the-server-for-a-while-without-using-infinite-loops
+  type: standard
+  cost: 270
+hidden: false
+---
+name: Video XSS
+value: 1350
+description: 'Embed an XSS payload <code>&lt;/script&gt;&lt;script&gt;alert(&#x60;xss&#x60;)&lt;/script&gt;</code>
+  into our promo video. <em>(This challenge is <strong>not available</strong> on Heroku!)</em>
+  (Difficulty Level: 6)'
+category: XSS
+type: standard
+flags:
+- flag: 3e81fb78b617246ca7275ec71014d7626c928a2d
+  type: static
+hints:
+- hint: You have to reuse the vulnerability behind one other 6-star challenge to be
+    able to solve this one.
+  type: standard
+  cost: 0
+- hint: https://pwning.owasp-juice.shop/part2/xss.html#embed-an-xss-payload-into-our-promo-video
+  type: standard
+  cost: 270
+hidden: false

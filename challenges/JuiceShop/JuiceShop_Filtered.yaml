@@ -1,0 +1,299 @@
+category: XSS
+description: 'Perform a <i>DOM</i> XSS attack with <code>&lt;iframe src="javascript:alert(&#x60;xss&#x60;)"&gt;</code>.
+  (Difficulty Level: 1)<br/><br/>Try it out at https://juiceshop.training.bbc-security-champions.com/'
+flags:
+- flag: d4d03490069d7bd1e36d6b13d034770ce4145c03
+  type: static
+hidden: false
+hints:
+- cost: 0
+  hint: Look for an input field where its content appears in the HTML when its form
+    is submitted.
+  type: standard
+- cost: 0
+  hint: https://pwning.owasp-juice.shop/part2/xss.html#perform-a-dom-xss-attack
+  type: standard
+name: DOM XSS (JuiceShop)
+type: standard
+value: 100
+---
+category: Security Misconfiguration
+description: 'Provoke an error that is neither very gracefully nor consistently handled.
+  (Difficulty Level: 1)<br/><br/>Try it out at https://juiceshop.training.bbc-security-champions.com/'
+flags:
+- flag: c654eba158b17a738145e01dd836218135b697ee
+  type: static
+hidden: false
+hints:
+- cost: 0
+  hint: Try to submit bad input to forms. Alternatively tamper with URL paths or parameters.
+  type: standard
+- cost: 0
+  hint: https://pwning.owasp-juice.shop/part2/security-misconfiguration.html#provoke-an-error-that-is-neither-very-gracefully-nor-consistently-handled
+  type: standard
+name: Error Handling (JuiceShop)
+type: standard
+value: 100
+---
+category: Improper Input Validation
+description: 'Give a devastating zero-star feedback to the store. (Difficulty Level:
+  1)<br/><br/>Try it out at https://juiceshop.training.bbc-security-champions.com/'
+flags:
+- flag: 6e29a7914a6bc7738d1eaf0494774f3f015c0b36
+  type: static
+hidden: false
+hints:
+- cost: 0
+  hint: Before you invest time bypassing the API, you might want to play around with
+    the UI a bit.
+  type: standard
+- cost: 0
+  hint: https://pwning.owasp-juice.shop/part2/improper-input-validation.html#give-a-devastating-zero-star-feedback-to-the-store
+  type: standard
+name: Zero Stars (JuiceShop)
+type: standard
+value: 100
+---
+category: Injection
+description: 'Log in with the administrator''s user account. (Difficulty Level: 2)<br/><br/>Try
+  it out at https://juiceshop.training.bbc-security-champions.com/'
+flags:
+- flag: 43b919c641b0da10e790640355f5bd95d767e0ae
+  type: static
+hidden: false
+hints:
+- cost: 0
+  hint: Try different SQL Injection attack patterns depending whether you know the
+    admin's email address or not.
+  type: standard
+- cost: 0
+  hint: https://pwning.owasp-juice.shop/part2/injection.html#log-in-with-the-administrators-user-account
+  type: standard
+name: Login Admin (JuiceShop)
+type: standard
+value: 250
+---
+category: Broken Access Control
+description: 'View another user''s shopping basket. (Difficulty Level: 2)<br/><br/>Try
+  it out at https://juiceshop.training.bbc-security-champions.com/'
+flags:
+- flag: 3ac2625074a2ba25efe41fa74491f96b0f5428e9
+  type: static
+hidden: false
+hints:
+- cost: 0
+  hint: Have an eye on the HTTP traffic while shopping. Alternatively try to find
+    a client-side association of users to their basket.
+  type: standard
+- cost: 0
+  hint: https://pwning.owasp-juice.shop/part2/broken-access-control.html#view-another-users-shopping-basket
+  type: standard
+name: View Basket (JuiceShop)
+type: standard
+value: 250
+---
+category: Injection
+description: 'Exfiltrate the entire DB schema definition via SQL Injection. (Difficulty
+  Level: 3)<br/><br/>Try it out at https://juiceshop.training.bbc-security-champions.com/'
+flags:
+- flag: 26a7d38dd3ff962c7312762068244fd11fab53f7
+  type: static
+hidden: false
+hints:
+- cost: 0
+  hint: Find out where this information could come from. Then craft a UNION SELECT
+    attack string against an endpoint that offers an unnecessary way to filter data.
+  type: standard
+- cost: 0
+  hint: https://pwning.owasp-juice.shop/part2/injection.html#exfiltrate-the-entire-db-schema-definition-via-sql-injection
+  type: standard
+name: Database Schema (JuiceShop)
+type: standard
+value: 450
+---
+category: Broken Access Control
+description: 'Post some feedback in another users name. (Difficulty Level: 3)<br/><br/>Try
+  it out at https://juiceshop.training.bbc-security-champions.com/'
+flags:
+- flag: 15a51d1a9a7ffe26dfd1f4880107ae03a8e65461
+  type: static
+hidden: false
+hints:
+- cost: 0
+  hint: You can solve this by tampering with the user interface or by intercepting
+    the communication with the RESTful backend.
+  type: standard
+- cost: 0
+  hint: https://pwning.owasp-juice.shop/part2/broken-access-control.html#post-some-feedback-in-another-users-name
+  type: standard
+name: Forged Feedback (JuiceShop)
+type: standard
+value: 450
+---
+category: Sensitive Data Exposure
+description: 'Log in with Amy''s original user credentials. (This could take 93.83
+  billion trillion trillion centuries to brute force, but luckily she did not read
+  the "One Important Final Note") (Difficulty Level: 3)<br/><br/>Try it out at https://juiceshop.training.bbc-security-champions.com/'
+flags:
+- flag: 56c844715f5dcc4757a3f62461b138bcd3ccab9d
+  type: static
+hidden: false
+hints:
+- cost: 0
+  hint: This challenge will make you go after a needle in a haystack.
+  type: standard
+- cost: 0
+  hint: https://pwning.owasp-juice.shop/part2/sensitive-data-exposure.html#log-in-with-amys-original-user-credentials
+  type: standard
+name: Login Amy (JuiceShop)
+type: standard
+value: 450
+---
+category: Injection
+description: 'Log in with Jim''s user account. (Difficulty Level: 3)<br/><br/>Try
+  it out at https://juiceshop.training.bbc-security-champions.com/'
+flags:
+- flag: 4f50e15c54aa72781e0311c68ecd3211a4302f5b
+  type: static
+hidden: false
+hints:
+- cost: 0
+  hint: Try cracking Jim's password hash if you harvested it already. Alternatively,
+    if you know Jim's email address, try SQL Injection.
+  type: standard
+- cost: 0
+  hint: https://pwning.owasp-juice.shop/part2/injection.html#log-in-with-jims-user-account
+  type: standard
+name: Login Jim (JuiceShop)
+type: standard
+value: 450
+---
+category: Broken Access Control
+description: 'Put an additional product into another user''s shopping basket. (Difficulty
+  Level: 3)<br/><br/>Try it out at https://juiceshop.training.bbc-security-champions.com/'
+flags:
+- flag: 6d2eee48dd907e6537e818fd55ff27778e5ed2fb
+  type: static
+hidden: false
+hints:
+- cost: 0
+  hint: Have an eye on the HTTP traffic while placing products in the shopping basket.
+    Changing the quantity of products already in the basket doesn't count.
+  type: standard
+- cost: 0
+  hint: https://pwning.owasp-juice.shop/part2/broken-access-control.html#put-an-additional-product-into-another-users-shopping-basket
+  type: standard
+name: Manipulate Basket (JuiceShop)
+type: standard
+value: 450
+---
+category: Improper Input Validation
+description: 'Place an order that makes you rich. (Difficulty Level: 3)<br/><br/>Try
+  it out at https://juiceshop.training.bbc-security-champions.com/'
+flags:
+- flag: 40002146ae80e8db640dc86268ec15e994a60ab3
+  type: static
+hidden: false
+hints:
+- cost: 0
+  hint: You literally need to make the shop owe you any amount of money.
+  type: standard
+- cost: 0
+  hint: https://pwning.owasp-juice.shop/part2/improper-input-validation.html#place-an-order-that-makes-you-rich
+  type: standard
+name: Payback Time (JuiceShop)
+type: standard
+value: 450
+---
+category: Improper Input Validation
+description: 'Obtain a Deluxe Membership without paying for it. (Difficulty Level:
+  3)<br/><br/>Try it out at https://juiceshop.training.bbc-security-champions.com/'
+flags:
+- flag: 74b3059e6fb0c566bdc5547a76107375248b1f06
+  type: static
+hidden: false
+hints:
+- cost: 0
+  hint: Look closely at what happens when you attempt to upgrade your account.
+  type: standard
+- cost: 0
+  hint: https://pwning.owasp-juice.shop/part2/improper-input-validation.html#obtain-a-deluxe-membership-without-paying-for-it
+  type: standard
+name: Deluxe Fraud (JuiceShop)
+type: standard
+value: 450
+---
+category: Injection
+description: 'Order the Christmas special offer of 2014. (Difficulty Level: 4)<br/><br/>Try
+  it out at https://juiceshop.training.bbc-security-champions.com/'
+flags:
+- flag: e40824dcf82338c2150a05d61fdf236a5c5a44e5
+  type: static
+hidden: false
+hints:
+- cost: 0
+  hint: Find out how the application handles unavailable products and try to find
+    a loophole.
+  type: standard
+- cost: 0
+  hint: https://pwning.owasp-juice.shop/part2/injection.html#order-the-christmas-special-offer-of-2014
+  type: standard
+name: Christmas Special (JuiceShop)
+type: standard
+value: 700
+---
+category: Broken Access Control
+description: 'Find the hidden <a href="http://en.wikipedia.org/wiki/Easter_egg_(media)"
+  target="_blank">easter egg</a>. (Difficulty Level: 4)<br/><br/>Try it out at https://juiceshop.training.bbc-security-champions.com/'
+flags:
+- flag: 4540491b987948ca8e39e179640b4368d0ea2d23
+  type: static
+hidden: false
+hints:
+- cost: 0
+  hint: If you solved one of the three file access challenges, you already know where
+    to find the easter egg.
+  type: standard
+- cost: 0
+  hint: https://pwning.owasp-juice.shop/part2/broken-access-control.html#find-the-hidden-easter-egg
+  type: standard
+name: Easter Egg (JuiceShop)
+type: standard
+value: 700
+---
+category: Injection
+description: 'Update multiple product reviews at the same time. (Difficulty Level:
+  4)<br/><br/>Try it out at https://juiceshop.training.bbc-security-champions.com/'
+flags:
+- flag: cb6bc8501f750b120e677bef252c68f4866a0e1e
+  type: static
+hidden: false
+hints:
+- cost: 0
+  hint: Take a close look on how the equivalent of UPDATE-statements in MongoDB work.
+  type: standard
+- cost: 0
+  hint: https://pwning.owasp-juice.shop/part2/injection.html#update-multiple-product-reviews-at-the-same-time
+  type: standard
+name: NoSQL Manipulation (JuiceShop)
+type: standard
+value: 700
+---
+category: Injection
+description: 'Retrieve a list of all user credentials via SQL Injection. (Difficulty
+  Level: 4)<br/><br/>Try it out at https://juiceshop.training.bbc-security-champions.com/'
+flags:
+- flag: 05fba1687d67dea0be32c37e7836621282aa3c4b
+  type: static
+hidden: false
+hints:
+- cost: 0
+  hint: Gather information on where user data is stored and how it is addressed. Then
+    craft a corresponding UNION SELECT attack.
+  type: standard
+- cost: 0
+  hint: https://pwning.owasp-juice.shop/part2/injection.html#retrieve-a-list-of-all-user-credentials-via-sql-injection
+  type: standard
+name: User Credentials (JuiceShop)
+type: standard
+value: 700

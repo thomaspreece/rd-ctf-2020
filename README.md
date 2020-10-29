@@ -18,6 +18,23 @@ You'll need to copy `./start_example.sh` to `start.sh` and add in client_secret 
 ./start.sh
 ```
 
+## Deploy to Kubernetes
+```
+kubectl create namespace ctfd
+# Note: It is important that there is NOT any newlines in the below file
+# otherwise louketo will fail to autenticate with KeyCloak
+# See https://www.funkypenguin.co.nz/beware-the-hidden-newlines-in-kubernetes-secrets/
+kubectl create secret generic ctfd-keycloak-client-secret --from-file=./ctfd-keycloak-client-secret.txt --namespace ctfd
+
+kubectl apply -f deploy/ctfd-mysql-db-deployment.yaml
+kubectl apply -f deploy/ctfd-redis-cache-deployment.yaml
+kubectl apply -f deploy/ctfd-deployment.yaml
+kubectl apply -f deploy/ctfd-nginx-deployment.yaml
+kubectl apply -f deploy/ctfd-louketo-proxy-deployment.yaml
+```
+
+
+
 # ![](https://github.com/CTFd/CTFd/blob/master/CTFd/themes/core/static/img/logo.png?raw=true)
 
 ![CTFd MySQL CI](https://github.com/CTFd/CTFd/workflows/CTFd%20MySQL%20CI/badge.svg?branch=master)

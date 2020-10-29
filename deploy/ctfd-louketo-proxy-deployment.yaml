@@ -1,0 +1,93 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: ctfd
+  creationTimestamp: null
+  name: ctfd-louketo-proxy
+  labels:
+    ctfd: louketo-proxy
+    app: ctfd-louketo-proxy
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ctfd-louketo-proxy
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        ctfd: louketo-proxy
+        app: ctfd-louketo-proxy
+    spec:
+      containers:
+      - args:
+        - --listen
+        - :8080
+        - --upstream-url
+        - http://ctfd-nginx:8080
+        - --discovery-url
+        - https://sso-nbe.bbcis.uk/auth/realms/rd-security-training
+        - --client-id
+        - ctfd
+        - --client-secret
+        - $(client_secret)
+        env:
+        - name: client_secret
+          valueFrom:
+            secretKeyRef:
+              name: ctfd-keycloak-client-secret
+              key: ctfd-keycloak-client-secret.txt
+        image: quay.io/louketo/louketo-proxy
+        imagePullPolicy: ""
+        name: louketo-proxy
+        ports:
+        - containerPort: 8080
+        resources: {}
+      restartPolicy: Always
+      serviceAccountName: ""
+      automountServiceAccountToken: false
+status: {}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  namespace: ctfd
+  creationTimestamp: null
+  labels:
+    app: ctfd-louketo-proxy
+  name: ctfd-louketo-proxy
+spec:
+  ports:
+  - name: ui
+    port: 8080
+    protocol: TCP
+    targetPort: 8080
+  selector:
+    app: ctfd-louketo-proxy
+  type: ClusterIP
+status: {}
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: ctfd-secure
+  creationTimestamp: null
+  namespace: ctfd
+spec:
+  entryPoints:
+    - websecure
+  routes:
+    - match: Host(`ctfd.rd-security-training.bbctest01.uk`)
+      kind: Rule
+      services:
+        - name: ctfd-louketo-proxy
+          namespace: ctfd
+          kind: Service
+          port: 8080
+  tls:
+    # Specifying domains here adds the Host header to request to pod
+    domains:
+      - main: ctfd.rd-security-training.bbctest01.uk
+    secretName: traefik-ctfd-cert

@@ -1,0 +1,118 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: ctfd-nginx-conf
+  namespace: ctfd
+data:
+  nginx.conf: |
+    worker_processes 4;
+    events {
+      worker_connections 1024;
+    }
+
+    http {
+      # Configuration containing list of application servers
+      upstream app_servers {
+        server ctfd:8000;
+      }
+
+      server {
+        listen 8080;
+        client_max_body_size 4G;
+        # Handle Server Sent Events for Notifications
+        location /events {
+          proxy_pass http://app_servers;
+          proxy_set_header Connection '';
+          proxy_http_version 1.1;
+          chunked_transfer_encoding off;
+          proxy_buffering off;
+          proxy_cache off;
+          proxy_redirect off;
+          proxy_set_header Host $host:$server_port;
+          proxy_set_header X-Real-IP $remote_addr;
+          proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+          proxy_set_header X-Forwarded-Host $http_x_forwarded_host;
+          proxy_set_header X-Forwarded-Proto https;
+          proxy_set_header authorization "";
+        }
+
+        # Proxy connections to the application servers
+        location / {
+          # server_name = 0.0.0.0:8000
+          # $proxy_add_x_forwarded_for = ???
+          proxy_pass http://app_servers;
+          proxy_redirect off;
+          # proxy_set_header Host 127.0.0.1;
+          proxy_set_header Host $host:$server_port;
+          proxy_set_header X-Real-IP $remote_addr;
+          proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+          proxy_set_header X-Forwarded-Host $http_x_forwarded_host;
+          proxy_set_header X-Forwarded-Proto https;
+          proxy_set_header authorization "";
+        }
+      }
+    }
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: ctfd
+  creationTimestamp: null
+  name: ctfd-nginx
+  labels:
+    ctfd: nginx
+    app: ctfd-nginx
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ctfd-nginx
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        ctfd: nginx
+        app: ctfd-nginx
+    spec:
+      containers:
+      - image: nginx:1.17
+        imagePullPolicy: ""
+        name: ctfd-nginx
+        resources: {}
+        volumeMounts:
+        - mountPath: /etc/nginx/
+          readOnly: true
+          name: ctfd-nginx-conf
+      restartPolicy: Always
+      serviceAccountName: ""
+      automountServiceAccountToken: false
+      volumes:
+      - name: ctfd-nginx-conf
+        configMap:
+          name: ctfd-nginx-conf
+          items:
+            - key: nginx.conf
+              path: nginx.conf
+status: {}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  namespace: ctfd
+  creationTimestamp: null
+  labels:
+    app: ctfd-nginx
+  name: ctfd-nginx
+spec:
+  ports:
+  - name: proxy
+    port: 8080
+    protocol: TCP
+    targetPort: 8080
+  selector:
+    app: ctfd-nginx
+  type: ClusterIP
+status: {}
+---

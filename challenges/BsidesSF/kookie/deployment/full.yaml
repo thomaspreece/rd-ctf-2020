@@ -1,0 +1,75 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: ctf
+  creationTimestamp: null
+  labels:
+    ctf: challenge
+    app: kookie
+  name: kookie
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: kookie
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: kookie
+    spec:
+      containers:
+      - image: localhost:32000/ctf-kookie:registry
+        name: kookie
+        resources: {}
+      restartPolicy: Always
+      serviceAccountName: ""
+      automountServiceAccountToken: false
+status: {}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  namespace: ctf
+  creationTimestamp: null
+  labels:
+    app: kookie
+  name: kookie
+spec:
+  ports:
+  - name: kookie-web
+    port: 8000
+    protocol: TCP
+    targetPort: 4455
+  selector:
+    app: kookie
+  type: ClusterIP
+status:
+  loadBalancer: {}
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: kookie
+  creationTimestamp: null
+  namespace: ctf
+  labels:
+    app: kookie
+spec:
+  entryPoints:
+    - websecure
+  routes:
+    - match: Host(`kookie.ctf.rd-security-training.bbctest01.uk`)
+      kind: Rule
+      services:
+        - name: kookie
+          namespace: ctf
+          kind: Service
+          port: 8000
+  tls:
+    # Specifying domains here adds the Host header to request to pod
+    domains:
+      - main: kookie.ctf.rd-security-training.bbctest01.uk
+    secretName: traefik-ctf-cert

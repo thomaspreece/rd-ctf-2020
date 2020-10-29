@@ -1,0 +1,47 @@
+name: Hurdles
+value: 1500
+description: 'You might <b>curl</b> up with fear at this challenge <br/>Flag in CTF{xxxxxx} format.<br/><br/> Challenge at https://hurdles.ctf.rd-security-training.bbctest01.uk/'
+category: "Beginner-101"
+type: standard
+flags:
+- flag: CTF{I_have_been_expecting_U}
+  type: static
+hints:
+- hint: The Curl command line tool is your friend here
+  type: standard
+  cost: 0
+- hint: Most hurdles require use of a curl command line flag. You may wish to look at data-raw for one of the hurdles.
+  type: standard
+  cost: 0
+hidden: false
+---
+name: Futurella
+value: 1000
+description: 'Just have a look around! <br/>Flag in CTF{xxxxxx} format.<br/><br/> Challenge at https://futurella.ctf.rd-security-training.bbctest01.uk/'
+category: "Beginner-101"
+type: standard
+flags:
+- flag: CTF{I_have_been_expecting_U}
+  type: static
+hints:
+- hint: Have you seen the film "Source Code"?
+  type: standard
+  cost: 0
+hidden: false
+---
+name: Kookie
+value: 1000
+description: 'When surveyed 9/10 R&D Engineers liked cookies.<br/>Flag in CTF{xxxxxx} format.<br/><br/> Challenge at https://futurella.ctf.rd-security-training.bbctest01.uk/'
+category: "Beginner-101"
+type: standard
+flags:
+- flag: CTF{I_have_been_expecting_U}
+  type: static
+hints:
+- hint: The browser tools will help you
+  type: standard
+  cost: 0
+- hint: How can you change your logged in username of cookie?
+  type: standard
+  cost: 0
+hidden: false

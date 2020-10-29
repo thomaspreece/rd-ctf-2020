@@ -1,0 +1,75 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: ctf
+  creationTimestamp: null
+  labels:
+    ctf: challenge
+    app: futurella
+  name: futurella
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: futurella
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: futurella
+    spec:
+      containers:
+      - image: localhost:32000/ctf-futurella:registry
+        name: futurella
+        resources: {}
+      restartPolicy: Always
+      serviceAccountName: ""
+      automountServiceAccountToken: false
+status: {}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  namespace: ctf
+  creationTimestamp: null
+  labels:
+    app: futurella
+  name: futurella
+spec:
+  ports:
+  - name: futurella-web
+    port: 8000
+    protocol: TCP
+    targetPort: 6789
+  selector:
+    app: futurella
+  type: ClusterIP
+status:
+  loadBalancer: {}
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: futurella
+  creationTimestamp: null
+  namespace: ctf
+  labels:
+    app: futurella
+spec:
+  entryPoints:
+    - websecure
+  routes:
+    - match: Host(`futurella.ctf.rd-security-training.bbctest01.uk`)
+      kind: Rule
+      services:
+        - name: futurella
+          namespace: ctf
+          kind: Service
+          port: 8000
+  tls:
+    # Specifying domains here adds the Host header to request to pod
+    domains:
+      - main: futurella.ctf.rd-security-training.bbctest01.uk
+    secretName: traefik-ctf-cert

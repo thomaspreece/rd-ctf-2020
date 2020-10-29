@@ -21,7 +21,7 @@ spec:
         app: kookie
     spec:
       containers:
-      - image: localhost:32000/ctf-kookie:registry
+      - image: rdctf/ctfd-kookie
         name: kookie
         resources: {}
       restartPolicy: Always

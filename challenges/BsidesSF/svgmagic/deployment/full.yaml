@@ -6,23 +6,23 @@ metadata:
   creationTimestamp: null
   labels:
     ctf: challenge
-    app: hurdles
-  name: hurdles
+    app: svgmagic
+  name: svgmagic
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: hurdles
+      app: svgmagic
   strategy: {}
   template:
     metadata:
       creationTimestamp: null
       labels:
-        app: hurdles
+        app: svgmagic
     spec:
       containers:
-      - image: localhost:32000/ctf-hurdles:registry
-        name: hurdles
+      - image: rdctf/ctfd-svgmagic
+        name: svgmagic
         resources: {}
       restartPolicy: Always
       serviceAccountName: ""
@@ -35,54 +35,41 @@ metadata:
   namespace: ctf
   creationTimestamp: null
   labels:
-    app: hurdles
-  name: hurdles
+    app: svgmagic
+  name: svgmagic
 spec:
   ports:
-  - name: hurdles-web
+  - name: svgmagic-web
     port: 8000
     protocol: TCP
-    targetPort: 8888
+    targetPort: 9999
   selector:
-    app: hurdles
+    app: svgmagic
   type: ClusterIP
 status:
   loadBalancer: {}
 ---
 apiVersion: traefik.containo.us/v1alpha1
-kind: Middleware
-metadata:
-  name: add-xforwarded-headers
-  namespace: ctf
-spec:
-  headers:
-    customRequestHeaders:
-      x-forwarded-for: '13.37.13.37, 127.0.0.1'
----
-apiVersion: traefik.containo.us/v1alpha1
 kind: IngressRoute
 metadata:
-  name: hurdles
+  name: svgmagic
   creationTimestamp: null
   namespace: ctf
   labels:
-    app: hurdles
+    app: svgmagic
 spec:
   entryPoints:
     - websecure
   routes:
-    - match: Host(`hurdles.ctf.rd-security-training.bbctest01.uk`)
+    - match: Host(`svgmagic.ctf.rd-security-training.bbctest01.uk`)
       kind: Rule
       services:
-        - name: hurdles
+        - name: svgmagic
           namespace: ctf
           kind: Service
           port: 8000
-      middlewares:
-        - name: add-xforwarded-headers
-          namespace: ctf
   tls:
     # Specifying domains here adds the Host header to request to pod
     domains:
-      - main: hurdles.ctf.rd-security-training.bbctest01.uk
+      - main: svgmagic.ctf.rd-security-training.bbctest01.uk
     secretName: traefik-ctf-cert

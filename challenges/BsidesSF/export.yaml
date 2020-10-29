@@ -96,20 +96,3 @@ hints:
 hidden: false
 files:
 - export.d/barcode/challenge.png
----
-name: had-a-bad-day
-value: 3000
-description: 'Can you read flag.php? <br/>Flag in CTF{xxxxxx} format.<br/><br/> Challenge at https://had-a-bad-day.ctf.rd-security-training.bbctest01.uk/'
-category: "LFI"
-type: standard
-flags:
-- flag: CTF{haha_no_imagemagick_sorry}
-  type: static
-hints:
-- hint: PHP + LFI? Have you tried asking google?
-  type: standard
-  cost: 0
-- hint: Sometimes you have to "filter" out some words to find the tips in a challenge
-  type: standard
-  cost: 0
-hidden: false

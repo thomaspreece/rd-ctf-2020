@@ -21,7 +21,7 @@ spec:
         app: futurella
     spec:
       containers:
-      - image: localhost:32000/ctf-futurella:registry
+      - image: rdctf/ctfd-futurella
         name: futurella
         resources: {}
       restartPolicy: Always

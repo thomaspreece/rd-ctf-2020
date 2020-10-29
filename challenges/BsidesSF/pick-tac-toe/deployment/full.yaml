@@ -6,23 +6,23 @@ metadata:
   creationTimestamp: null
   labels:
     ctf: challenge
-    app: hurdles
-  name: hurdles
+    app: pick-tac-toe
+  name: pick-tac-toe
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: hurdles
+      app: pick-tac-toe
   strategy: {}
   template:
     metadata:
       creationTimestamp: null
       labels:
-        app: hurdles
+        app: pick-tac-toe
     spec:
       containers:
-      - image: localhost:32000/ctf-hurdles:registry
-        name: hurdles
+      - image: rdctf/ctfd-pick-tac-toe
+        name: pick-tac-toe
         resources: {}
       restartPolicy: Always
       serviceAccountName: ""
@@ -35,54 +35,41 @@ metadata:
   namespace: ctf
   creationTimestamp: null
   labels:
-    app: hurdles
-  name: hurdles
+    app: pick-tac-toe
+  name: pick-tac-toe
 spec:
   ports:
-  - name: hurdles-web
+  - name: pick-tac-toe-web
     port: 8000
     protocol: TCP
-    targetPort: 8888
+    targetPort: 3000
   selector:
-    app: hurdles
+    app: pick-tac-toe
   type: ClusterIP
 status:
   loadBalancer: {}
 ---
 apiVersion: traefik.containo.us/v1alpha1
-kind: Middleware
-metadata:
-  name: add-xforwarded-headers
-  namespace: ctf
-spec:
-  headers:
-    customRequestHeaders:
-      x-forwarded-for: '13.37.13.37, 127.0.0.1'
----
-apiVersion: traefik.containo.us/v1alpha1
 kind: IngressRoute
 metadata:
-  name: hurdles
+  name: pick-tac-toe
   creationTimestamp: null
   namespace: ctf
   labels:
-    app: hurdles
+    app: pick-tac-toe
 spec:
   entryPoints:
     - websecure
   routes:
-    - match: Host(`hurdles.ctf.rd-security-training.bbctest01.uk`)
+    - match: Host(`pick-tac-toe.ctf.rd-security-training.bbctest01.uk`)
       kind: Rule
       services:
-        - name: hurdles
+        - name: pick-tac-toe
           namespace: ctf
           kind: Service
           port: 8000
-      middlewares:
-        - name: add-xforwarded-headers
-          namespace: ctf
   tls:
     # Specifying domains here adds the Host header to request to pod
     domains:
-      - main: hurdles.ctf.rd-security-training.bbctest01.uk
+      - main: pick-tac-toe.ctf.rd-security-training.bbctest01.uk
     secretName: traefik-ctf-cert

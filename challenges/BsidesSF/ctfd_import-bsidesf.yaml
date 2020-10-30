@@ -81,7 +81,7 @@ hints:
 hidden: false
 ---
 name: Barcode
-value: 2500
+value: 3000
 description: This person clearly has good data securing as they have very cleanly
   scrubbed the data from the image.
 category: Forensics
@@ -98,7 +98,7 @@ files:
 - export.d/barcode/challenge.png
 ---
 name: had-a-bad-day
-value: 3000
+value: 2500
 description: 'Can you read flag.php? <br/>Flag in CTF{xxxxxx} format.<br/><br/> Challenge at https://had-a-bad-day.ctf.rd-security-training.bbctest01.uk/'
 category: "LFI"
 type: standard

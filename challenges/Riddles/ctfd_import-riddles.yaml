@@ -1,0 +1,164 @@
+---
+name: Riddle 1
+value: 100
+description: "Mary's father has five children. They are Nana, Nene, Nini, and Nono. What is the fifth childs name? <br/>Flag is one word, lowercase"
+category: "Riddles"
+type: standard
+flags:
+- flag: mary
+  type: static
+hints: {}
+hidden: false
+---
+name: Riddle 2
+value: 400
+description: 'What has a head, a tail, is brown, and has no legs? <br/>Flag is one word, lowercase'
+category: "Riddles"
+type: standard
+flags:
+- flag: penny
+  type: static
+hints: {}
+hidden: false
+---
+name: Riddle 3
+value: 400
+description: "What has many keys, but can't even open a single door? <br/>Flag is one word, lowercase"
+category: "Riddles"
+type: standard
+flags:
+- flag: piano
+  type: static
+hints: {}
+hidden: false
+---
+name: Riddle 4
+value: 400
+description: "Which one of Santa's reindeer do you see at a competition? <br/>Flag is one word, lowercase"
+category: "Riddles"
+type: standard
+flags:
+- flag: dancer
+  type: static
+hints: {}
+hidden: false
+---
+name: Riddle 5
+value: 400
+description: "What has 4 legs when it is young, 2 legs when its not old but is about to be, and has 3 legs when it is old. What am I? <br/>Flag is one word, lowercase"
+category: "Riddles"
+type: standard
+flags:
+- flag: human
+  type: static
+- flag: man
+  type: static
+- flag: woman
+  type: static
+- flag: person
+  type: static
+hints: {}
+hidden: false
+---
+name: Riddle 6
+value: 400
+description: "Sometimes I move fast, Sometimes I move slow; But my speed is truly constant, And nowhere I go. What am I? <br/>Flag is one word, lowercase"
+category: "Riddles"
+type: standard
+flags:
+- flag: time
+  type: static
+hints: {}
+hidden: true
+---
+name: Riddle 7
+value: 400
+description: "I turn around once. What is out will not get in. I turn around again. What is in will not get out. What am I? <br/>Flag is one word, lowercase"
+category: "Riddles"
+type: standard
+flags:
+- flag: key
+  type: static
+hints: {}
+hidden: true
+---
+name: Riddle 8
+value: 500
+description: "A man goes out drinking every night, returning to his home in the wee hours of every morning. No matter how much he drinks, he never gets a hangover. This drink is very well known, but is rarely consumed, served warm and taken straight from its source. The man is a sucker for a free drink, especially since he can't live without it. What is his favorite drink? <br/>Flag is one word, lowercase"
+category: "Riddles"
+type: standard
+flags:
+- flag: blood
+  type: static
+hints: {}
+hidden: true
+---
+name: Riddle 9
+value: 500
+description: "I can bring tears to your eyes; resurrect the dead, make you smile, and reverse time. I form in an instant but I last a life time. What am I? <br/>Flag is one word, lowercase"
+category: "Riddles"
+type: standard
+flags:
+- flag: memory
+  type: static
+- flag: memories
+  type: static
+hints: {}
+hidden: true
+---
+name: Riddle 10
+value: 500
+description: "Often held but never touched, always wet but never rusts, often bites but seldom bit, to use me well you must have wit. What am I? <br/>Flag is one word, lowercase"
+category: "Riddles"
+type: standard
+flags:
+- flag: tongue
+  type: static
+hints: {}
+hidden: true
+---
+name: Riddle 11
+value: 500
+description: "Poke your fingers in my eyes and I will open wide my jaws. Linen cloth, quills, or paper, my greedy lust devours them all. What am I? <br/>Flag is one word, lowercase"
+category: "Riddles"
+type: standard
+flags:
+- flag: scissors
+  type: static
+- flag: shears
+  type: static
+hints: {}
+hidden: true
+---
+name: Riddle 12
+value: 500
+description: 'What comes once in a minute, twice in a moment, but never in a thousand years? <br/>Flag is one word, lowercase'
+category: "Riddles"
+type: standard
+flags:
+- flag: m
+  type: static
+hints: {}
+hidden: true
+---
+name: Riddle 13
+value: 600
+description: "Not born, but from a Mother's body drawn, I hang until half of me is gone. I sleep in a cave until I grow old, then valued for my hardened gold. What am I? <br/>Flag is one word, lowercase"
+category: "Riddles"
+type: standard
+flags:
+- flag: cheese
+  type: static
+hints: {}
+hidden: true
+---
+name: Riddle 14
+value: 600
+description: "The cost of making only the maker knows, Valueless if bought, but sometimes traded. A poor man may give one as easily as a king. When one is broken pain and deceit are assured. What is it? <br/>Flag is one word, lowercase"
+category: "Riddles"
+type: standard
+flags:
+- flag: promise
+  type: static
+hints: {}
+hidden: true

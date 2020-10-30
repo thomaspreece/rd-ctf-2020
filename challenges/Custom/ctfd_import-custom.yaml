@@ -1,0 +1,50 @@
+name: Byte To Eat
+value: 2000
+description: I was sent this PNG and I'm sure it contains sensitive data but I cannot read it. Can you help? <br/>Flag in CTF{xxxxxx} format.
+category: Forensics
+type: standard
+flags:
+- flag: CTF{sorry_nothing_to_eat_here}
+  type: static
+hints:
+- hint: "I spelt Bite wrong in the title, that was careless wasn't it..."
+  type: standard
+  cost: 0
+- hint: "I've eaten my lunch now, it was a 'magic byte' sandwich."
+  type: standard
+  cost: 0
+hidden: false
+files:
+- export.d/byte-to-eat/broken.png
+---
+name: Recursion
+value: 2000
+description: Can you extract the flag.txt file? <br/>Flag in CTF{xxxxxx} format.
+category: Forensics
+type: standard
+flags:
+- flag: CTF{turtles_all_the_way_down}
+  type: static
+hints:
+- hint: "Don't try it by hand, it may take a while!"
+  type: standard
+  cost: 0
+hidden: false
+files:
+- export.d/recursion/flag.zip
+---
+name: Recursion 2
+value: 2500
+description: Can you extract the flag from this file? <br/>Flag in CTF{xxxxxx} format.
+category: Forensics
+type: standard
+flags:
+- flag: CTF{assemble_the_pieces}
+  type: static
+hints:
+- hint: "Don't try it by hand, it may take a while!"
+  type: standard
+  cost: 0
+hidden: false
+files:
+- export.d/recursion-2/flag.zip

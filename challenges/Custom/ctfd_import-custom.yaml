@@ -67,3 +67,19 @@ hints:
 hidden: false
 files:
 - export.d/appended/appended.bin.jpg
+---
+name: Who Dis?
+value: 2500
+description: Who took this Photo? <br/>Flag in Xxxxxx Yyyyyyy format.
+category: OSINT
+type: standard
+flags:
+- flag: Arunopal Banerjee
+  type: static
+hints:
+- hint: "Google Image Search is your friend here"
+  type: standard
+  cost: 0
+hidden: false
+files:
+- export.d/who-dis/image.webp

@@ -1,0 +1,76 @@
+name: Railway 1
+value: 400
+description: 'Where is this railway? <br/>Flag is one word, lowercase'
+category: Railway
+type: standard
+flags:
+- flag: saltburn
+  type: static
+- flag: saltburn-by-the-sea
+  type: static
+hints: {}
+hidden: false
+files:
+- export.d/railway1.jpg
+---
+name: Railway 2
+value: 400
+description: 'Where is this railway? <br/>Flag is one word, lowercase'
+category: Railway
+type: standard
+flags:
+- flag: looe
+  type: static
+hints: {}
+hidden: false
+files:
+- export.d/railway2.jpg
+---
+name: Railway 3
+value: 400
+description: 'Where is this railway? <br/>Flag is one word, lowercase'
+category: Railway
+type: standard
+flags:
+- flag: snowdon
+  type: static
+- flag: snowdonia
+  type: static
+hints: {}
+hidden: false
+files:
+- export.d/railway3.jpg
+---
+name: Railway 4
+value: 400
+description: 'Where is this railway? <br/>Flag is one word, lowercase'
+category: Railway
+type: standard
+flags:
+- flag: uckfield
+  type: static
+- flag: bluebell
+  type: static
+- flag: park
+  type: static
+hints: {}
+hidden: false
+files:
+- export.d/railway4.jpg
+---
+name: Railway 5
+value: 400
+description: 'Where is this railway? <br/>Flag is one word, lowercase'
+category: Railway
+type: standard
+flags:
+- flag: southend-on-sea
+  type: static
+- flag: southend
+  type: static
+- flag: essex
+  type: static
+hints: {}
+hidden: false
+files:
+- export.d/railway5.jpg

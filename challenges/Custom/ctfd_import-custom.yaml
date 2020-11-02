@@ -48,3 +48,22 @@ hints:
 hidden: false
 files:
 - export.d/recursion-2/flag.zip
+---
+name: Appended
+value: 2000
+description: This image isn't what it seems... <br/>Flag in CTF{xxxxxx} format.
+category: Forensics
+type: standard
+flags:
+- flag: CTF{binwalk_to_victory}
+  type: static
+hints:
+- hint: "Take a Walk through this file"
+  type: standard
+  cost: 0
+- hint: "The password is in plain sight!"
+  type: standard
+  cost: 0
+hidden: false
+files:
+- export.d/appended/appended.bin.jpg

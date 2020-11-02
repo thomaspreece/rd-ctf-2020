@@ -48,7 +48,7 @@ hidden: false
 ---
 name: pick-tac-toe
 value: 1500
-description: 'Play some tic-tac-toe and validate that the computer is very good at it.<br/>Flag in CTF{xxxxxx} format.<br/><br/> Challenge at https://pikc-tac-toe.ctf.rd-security-training.bbctest01.uk/'
+description: 'Play some tic-tac-toe and validate that the computer is very good at it.<br/>Flag in CTF{xxxxxx} format.<br/><br/> Challenge at https://pick-tac-toe.ctf.rd-security-training.bbctest01.uk/'
 category: "Beginner-101"
 type: standard
 flags:

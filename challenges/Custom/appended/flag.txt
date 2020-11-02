@@ -1,0 +1,1 @@
+CTF{binwalk_to_victory}

@@ -113,3 +113,62 @@ hints:
   type: standard
   cost: 0
 hidden: false
+---
+name: All Your Bases Belong To Us
+value: 6000
+description: A lot of the computer world is just layers of abstraction.  Layers and layers
+  and layers and layers and layers and layers and layers and layers and ...
+  layers and layers and ... <br/>Flag in CTF{xxxxxx} format.
+category: Forensics
+type: standard
+flags:
+- flag: CTF{what_the_hell_is_base85}
+  type: static
+hints:
+- hint: There isn't just base64 in here...
+  type: standard
+  cost: 0
+- hint: There is a total of 9 different encodings. Only 4 of these are BaseXX.
+  type: standard
+  cost: 0
+hidden: false
+files:
+- export.d/all_the_bases/flag.txt
+---
+name: Zippy
+value: 3000
+description: Can you read the flag from the PCAP? <br/>Flag in CTF{xxxxxx} format.
+category: Network
+type: standard
+flags:
+- flag: CTF{what_the_hell_is_base85}
+  type: static
+hints:
+- hint: You may find Wireshark helpful
+  type: standard
+  cost: 0
+- hint: Zippy is password protected. Maybe talk to John "the Ripper" Smith.
+  type: standard
+  cost: 0
+hidden: false
+files:
+- export.d/zippy/zippy.pcapng
+---
+name: TheKey
+value: 5000
+description: Can you read the flag from the PCAP? <br/>Flag in CTF{xxxxxx} format.
+category: Network
+type: standard
+flags:
+- flag: CTF{MY_FAVOURITE_EDITOR_IS_VIM}
+  type: static
+hints:
+- hint: Try googling decode USB Keyboard PCAP
+  type: standard
+  cost: 0
+- hint: https://blog.stayontarget.org/2019/03/decoding-mixed-case-usb-keystrokes-from.html is helpful. Also note that the user appears to be using VIM shortcuts.
+  type: standard
+  cost: 2000
+hidden: false
+files:
+- export.d/thekey/out.pcapng

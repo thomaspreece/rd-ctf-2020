@@ -141,7 +141,7 @@ description: Can you read the flag from the PCAP? <br/>Flag in CTF{xxxxxx} forma
 category: Network
 type: standard
 flags:
-- flag: CTF{what_the_hell_is_base85}
+- flag: CTF{this_flag_is_your_flag}
   type: static
 hints:
 - hint: You may find Wireshark helpful

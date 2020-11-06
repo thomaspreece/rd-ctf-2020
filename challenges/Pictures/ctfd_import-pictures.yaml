@@ -1,0 +1,148 @@
+name: Castle 1
+value: 400
+description: 'Where is this castle? <br/>Flag is one word, lowercase'
+category: Castles
+type: standard
+flags:
+- flag: beaumaris
+  type: static
+hints: {}
+hidden: false
+files:
+- export.d/castle1.jpg
+---
+name: Castle 2
+value: 400
+description: 'Where is this castle? <br/>Flag is one word, lowercase'
+category: Castles
+type: standard
+flags:
+- flag: caernarfon
+  type: static
+hints: {}
+hidden: false
+files:
+- export.d/castle2.jpg
+---
+name: Castle 3
+value: 400
+description: 'Where is this castle? <br/>Flag is one word, lowercase'
+category: Castles
+type: standard
+flags:
+- flag: conwy
+  type: static
+hints: {}
+hidden: false
+files:
+- export.d/castle3.jpg
+---
+name: Castle 4
+value: 400
+description: 'Where is this castle? <br/>Flag is one word, lowercase'
+category: Castles
+type: standard
+flags:
+- flag: kenilworth
+  type: static
+hints: {}
+hidden: false
+files:
+- export.d/castle4.jpg
+---
+name: Pier 1
+value: 400
+description: 'Where is this pier? <br/>Flag is two words, lowercase'
+category: Piers
+type: standard
+flags:
+- flag: great yarmouth
+  type: static
+hints: {}
+hidden: false
+files:
+- export.d/pier1.jpg
+---
+name: Pier 2
+value: 400
+description: 'Where is this pier? <br/>Flag is one word, lowercase'
+category: Piers
+type: standard
+flags:
+- flag: llandudno
+  type: static
+hints: {}
+hidden: false
+files:
+- export.d/pier2.jpg
+---
+name: Pier 3
+value: 400
+description: 'Where is this pier? <br/>Flag is one word, lowercase'
+category: Piers
+type: standard
+flags:
+- flag: southend-on-sea
+  type: static
+- flag: southend
+  type: static
+hints: {}
+hidden: false
+files:
+- export.d/pier3.jpg
+---
+name: Pier 4
+value: 400
+description: 'Where is this pier? <br/>Flag is one word (hyphenated), lowercase'
+category: Piers
+type: standard
+flags:
+- flag: weston-super-mare
+  type: static
+hints: {}
+hidden: false
+files:
+- export.d/pier4.jpg
+---
+name: Clock 1
+value: 400
+description: 'Where is this clock tower? <br/>Flag is one word, lowercase'
+category: Clocks
+type: standard
+flags:
+- flag: burton
+  type: static
+- flag: burton upon trent
+  type: static
+- flag: burton-on-trent
+  type: static
+hints: {}
+hidden: false
+files:
+- export.d/clock1.jpg
+---
+name: Clock 2
+value: 400
+description: 'Where is this clock tower? <br/>Flag is two words, lowercase'
+category: Clocks
+type: standard
+flags:
+- flag: lyme regis
+  type: static
+hints: {}
+hidden: false
+files:
+- export.d/clock2.jpg
+---
+name: Clock 3
+value: 400
+description: 'Where is this clock tower? <br/>Flag is one word, lowercase'
+category: Clocks
+type: standard
+flags:
+- flag: weymouth
+  type: static
+hints: {}
+hidden: false
+files:
+- export.d/clock3.jpg

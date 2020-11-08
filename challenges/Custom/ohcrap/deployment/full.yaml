@@ -1,0 +1,109 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: ohcrap-html
+  namespace: ctf
+data:
+  index.html: |
+    <html>
+    <head>
+      <title>Temp Credentials</title>
+    </head>
+    <body>
+      <h1>Temp Credentials</h1>
+      <p>
+        Hi Rod, I don't trust email so I've put up this super secret site so you can get your credentials.
+        I'll take it down shortly so hopefully nobody else will see the website. All the best.
+      </p>
+      <p>
+        Credentials: CTF{the_internet_remembers}
+      </p>
+    </body>
+    </html>
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: ctf
+  creationTimestamp: null
+  labels:
+    ctf: challenge
+    app: ohcrap
+  name: ohcrap
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ohcrap
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: ohcrap
+    spec:
+      containers:
+      - image: nginx:1.17
+        imagePullPolicy: ""
+        name: ohcrap
+        resources: {}
+        volumeMounts:
+        - mountPath: /usr/share/nginx/html
+          readOnly: true
+          name: ohcrap-html
+      restartPolicy: Always
+      serviceAccountName: ""
+      automountServiceAccountToken: false
+      volumes:
+      - name: ohcrap-html
+        configMap:
+          name: ohcrap-html
+          items:
+            - key: index.html
+              path: index.html
+status: {}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  namespace: ctf
+  creationTimestamp: null
+  labels:
+    app: ohcrap
+  name: ohcrap
+spec:
+  ports:
+  - name: ohcrap-web
+    port: 8000
+    protocol: TCP
+    targetPort: 80
+  selector:
+    app: ohcrap
+  type: ClusterIP
+status:
+  loadBalancer: {}
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: ohcrap
+  creationTimestamp: null
+  namespace: ctf
+  labels:
+    app: ohcrap
+spec:
+  entryPoints:
+    - websecure
+  routes:
+    - match: Host(`ohcrap.ctf.rd-security-training.bbctest01.uk`)
+      kind: Rule
+      services:
+        - name: ohcrap
+          namespace: ctf
+          kind: Service
+          port: 8000
+  tls:
+    # Specifying domains here adds the Host header to request to pod
+    domains:
+      - main: ohcrap.ctf.rd-security-training.bbctest01.uk
+    secretName: traefik-ctf-cert

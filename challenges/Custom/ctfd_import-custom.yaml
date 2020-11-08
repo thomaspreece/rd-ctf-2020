@@ -99,3 +99,34 @@ hints:
 hidden: false
 files:
 - export.d/flight/image.webp
+---
+name: Legion of Doom
+value: 3000
+description: The Legion have somehow setup a website on the ctf.rd-security-training.bbctest01.uk domain but we cannot find it, can you help?<br/>Flag in CTF{xxxxxx} format.
+category: OSINT
+type: standard
+flags:
+- flag: CTF{security_through_obscurity_isnt_valid}
+  type: static
+hints:
+- hint: I wonder if they are using https...
+  type: standard
+  cost: 0
+- hint: A friend told me that "Certificate Transparency Logs" may help
+  type: standard
+  cost: 2000
+hidden: false
+---
+name: Oh Crap!
+value: 3000
+description: We noticed some traffic to oncrap.ctf.rd-security-training.bbctest01.uk a few days ago but there appears to be nothing there...<br/>Flag in CTF{xxxxxx} format.
+category: OSINT
+type: standard
+flags:
+- flag: CTF{the_internet_remembers}
+  type: static
+hints:
+- hint: WayBack a long time in history...
+  type: standard
+  cost: 1000
+hidden: false

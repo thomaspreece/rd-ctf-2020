@@ -226,3 +226,19 @@ hints:
   type: standard
   cost: 0
 hidden: false
+---
+name: Hate Self
+value: 8000
+description: I heard you like archives so I put archives in your archives... <br/>Flag in flag[xxxxxx] format.
+category: Forensics
+type: standard
+flags:
+- flag: flag[tostrivetoseektofindandnottoyield]
+  type: static
+hints:
+- hint: No hints for this one. Expect it to be painful!
+  type: standard
+  cost: 0
+hidden: false
+files:
+- export.d/hate-self/hate-self.bin

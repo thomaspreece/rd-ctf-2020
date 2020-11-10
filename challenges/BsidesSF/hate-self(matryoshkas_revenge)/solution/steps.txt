@@ -1,0 +1,29 @@
+$ zpaq a ../step_01/file file -t8
+
+$ lha a ../step_02/file file 
+
+$ arj a ../step_03/file file 
+
+$ lzip -c -9 file > ../step_04/file
+
+$ /opt/stuffit/bin/stuff -f=hqx -n=file.hqx file
+
+$ freeze -c file > ../step_06/file
+
+$ lz4 -9 -z -c file > ../step_07/file
+
+$ /opt/stuffit/bin/stuff -f=sit5 -n=file.sit file
+
+$ lz5 -c -49 -z -v file > ../step_09/file
+
+$ lrzip -z -v -o ../step_10/file file 
+
+$ qpress -L3v file file.qp
+
+$ shar file > ../step_12/file
+
+$ xz -z -c -9 -e -v file > ../step_13/file
+
+$ rar a ../step_14/file file
+
+

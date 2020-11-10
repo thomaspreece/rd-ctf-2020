@@ -1,0 +1,17 @@
+The flag is a text file that has gone through 14 layers of
+compression.  Some of the formats used are exceptionally obscure.  The
+lzip layer is intentionally corrupted and can't be extracted without
+first using lziprecover to repair the archive with the builtin
+parity. The result is a 23,000 bit archive.
+
+This archive is then encoded in 23,000 layers where a 0 bit is XZ
+compression and a 1 bit is GZip compression.  The 23,000 layers start
+by compressing guidepost.jpg which is a hint that the solution is in
+all the steps.  23,000 layers later the result is a 3.75MB archive.
+
+To solve, you have to write a program that decompresses all 23,000
+layers, keeping track of whether a layer was XZ or GZip to reconstruct
+the encoded archive.  Once this in reconstructed you then have to
+decompress the 14 obscure layers.
+
+flag[tostrivetoseektofindandnottoyield]

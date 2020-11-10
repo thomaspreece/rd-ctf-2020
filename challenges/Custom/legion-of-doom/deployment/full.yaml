@@ -42,6 +42,7 @@ spec:
       creationTimestamp: null
       labels:
         app: legion-of-doom
+        ctf: challenge
     spec:
       containers:
       - image: nginx:1.17

@@ -1,0 +1,29 @@
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  namespace: ctf
+  creationTimestamp: null
+  labels:
+    ctf: helper
+    app: cloud2clown-bot
+  name: cloud2clown-bot
+spec:
+  schedule: "*/1 * * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: cloud2clown-bot
+            image: curlimages/curl
+            args:
+            - -X
+            - POST
+            - http://browserless-chrome:3000/content
+            - -H
+            - "Cache-Control: no-cache"
+            - -H
+            - "Content-Type: application/json"
+            - -d
+            - '{"url": "https://cloud2clown.ctf.rd-security-training.bbctest01.uk/review", "cookies": [{"name": "AUTHZ_KEY", "value": "correct horse battery staple", "domain": "cloud2clown.ctf.rd-security-training.bbctest01.uk"}]}'
+          restartPolicy: OnFailure

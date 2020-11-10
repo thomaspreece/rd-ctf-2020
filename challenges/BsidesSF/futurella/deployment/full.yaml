@@ -19,6 +19,7 @@ spec:
       creationTimestamp: null
       labels:
         app: futurella
+        ctf: challenge
     spec:
       containers:
       - image: rdctf/ctfd-futurella

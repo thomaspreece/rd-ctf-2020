@@ -19,6 +19,7 @@ spec:
       creationTimestamp: null
       labels:
         app: hurdles
+        ctf: challenge
     spec:
       containers:
       - image: localhost:32000/ctf-hurdles:registry

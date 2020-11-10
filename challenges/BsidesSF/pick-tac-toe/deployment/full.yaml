@@ -19,6 +19,7 @@ spec:
       creationTimestamp: null
       labels:
         app: pick-tac-toe
+        ctf: challenge
     spec:
       containers:
       - image: rdctf/ctfd-pick-tac-toe

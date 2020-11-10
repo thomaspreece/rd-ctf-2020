@@ -19,6 +19,7 @@ spec:
       creationTimestamp: null
       labels:
         app: svgmagic
+        ctf: challenge
     spec:
       containers:
       - image: rdctf/ctfd-svgmagic

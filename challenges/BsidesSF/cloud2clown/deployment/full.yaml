@@ -1,0 +1,99 @@
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: cloud2clown-internet-only
+spec:
+  podSelector:
+    matchLabels:
+      app: cloud2clown
+  policyTypes:
+  - Egress
+  egress:
+  - ports:
+    - port: 53
+      protocol: UDP
+    - port: 53
+      protocol: TCP
+  - to:
+    - ipBlock:
+        cidr: 0.0.0.0/0
+        except:
+        - 10.0.0.0/8
+        - 192.168.0.0/16
+        - 172.16.0.0/12
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: ctf
+  creationTimestamp: null
+  labels:
+    ctf: challenge
+    app: cloud2clown
+  name: cloud2clown
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: cloud2clown
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: cloud2clown
+        ctf: challenge
+    spec:
+      containers:
+      - image: rdctf/ctfd-cloud2clown
+        name: cloud2clown
+        resources: {}
+      restartPolicy: Always
+      serviceAccountName: ""
+      automountServiceAccountToken: false
+status: {}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  namespace: ctf
+  creationTimestamp: null
+  labels:
+    app: cloud2clown
+  name: cloud2clown
+spec:
+  ports:
+  - name: cloud2clown-web
+    port: 8000
+    protocol: TCP
+    targetPort: 8081
+  selector:
+    app: cloud2clown
+  type: ClusterIP
+status:
+  loadBalancer: {}
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: cloud2clown
+  creationTimestamp: null
+  namespace: ctf
+  labels:
+    app: cloud2clown
+spec:
+  entryPoints:
+    - websecure
+  routes:
+    - match: Host(`cloud2clown.ctf.rd-security-training.bbctest01.uk`)
+      kind: Rule
+      services:
+        - name: cloud2clown
+          namespace: ctf
+          kind: Service
+          port: 8000
+  tls:
+    # Specifying domains here adds the Host header to request to pod
+    domains:
+      - main: cloud2clown.ctf.rd-security-training.bbctest01.uk
+    secretName: traefik-ctf-cert

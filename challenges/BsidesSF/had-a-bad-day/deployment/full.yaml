@@ -19,6 +19,7 @@ spec:
       creationTimestamp: null
       labels:
         app: had-a-bad-day
+        ctf: challenge
     spec:
       containers:
       - image: rdctf/ctfd-had-a-bad-day

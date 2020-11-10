@@ -172,3 +172,57 @@ hints:
 hidden: false
 files:
 - export.d/thekey/out.pcapng
+---
+name: SlashSlash
+value: 1000
+description: Get the flag from this zip <br/>Flag in CTF{xxxxxx} format.
+category: Forensics
+type: standard
+flags:
+- flag: CTF{always_add_comments}
+  type: static
+hints: {}
+hidden: false
+files:
+- export.d/slashslash/flag.zip
+---
+name: Cloud2Clown (Flag 1)
+value: 5000
+description: Sometimes you see marketing materials that use the word cloud to the point that
+    it starts to lose all meaning.  This service allows you to fix that with clowns
+    instead of clouds.<br/>
+    This challenge has two flags, this challenge is for flag 1<br/>
+    Flag in CTF{xxxxxx} format.
+    <br/> Challenge at https://cloud2clown.ctf.rd-security-training.bbctest01.uk/'
+category: Web
+type: standard
+flags:
+- flag: CTF{we_hope_that_wasnt_hard}
+  type: static
+hints:
+- hint: Despite this being Flag 1, you should attempt Flag 2 first.
+  type: standard
+  cost: 0
+- hint: You may find https://jsbin.com/ and https://requestbin.com/ helpful
+  type: standard
+  cost: 0
+hidden: false
+---
+name: Cloud2Clown (Flag 2)
+value: 2000
+description: Sometimes you see marketing materials that use the word cloud to the point that
+    it starts to lose all meaning.  This service allows you to fix that with clowns
+    instead of clouds.<br/>
+    This challenge has two flags, this challenge is for flag 2<br/>
+    Flag in CTF{xxxxxx} format.
+    <br/> Challenge at https://cloud2clown.ctf.rd-security-training.bbctest01.uk/'
+category: Web
+type: standard
+flags:
+- flag: CTF{ssrf_for_more_than_metadata}
+  type: static
+hints:
+- hint: This server runs on port 8081 locally
+  type: standard
+  cost: 0
+hidden: false

@@ -19,6 +19,7 @@ spec:
       creationTimestamp: null
       labels:
         app: kookie
+        ctf: challenge
     spec:
       containers:
       - image: rdctf/ctfd-kookie

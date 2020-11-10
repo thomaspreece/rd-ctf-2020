@@ -1,0 +1,74 @@
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: browserless-chrome-internet-only
+spec:
+  podSelector:
+    matchLabels:
+      app: browserless-chrome
+  policyTypes:
+  - Egress
+  egress:
+  - ports:
+    - port: 53
+      protocol: UDP
+    - port: 53
+      protocol: TCP
+  - to:
+    - ipBlock:
+        cidr: 0.0.0.0/0
+        except:
+        - 10.0.0.0/8
+        - 192.168.0.0/16
+        - 172.16.0.0/12
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: ctf
+  creationTimestamp: null
+  labels:
+    ctf: helper
+    app: browserless-chrome
+  name: browserless-chrome
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: browserless-chrome
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: browserless-chrome
+        ctf: helper
+    spec:
+      containers:
+      - image: browserless/chrome
+        name: browserless-chrome
+        resources: {}
+      restartPolicy: Always
+      serviceAccountName: ""
+      automountServiceAccountToken: false
+status: {}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  namespace: ctf
+  creationTimestamp: null
+  labels:
+    app: browserless-chrome
+  name: browserless-chrome
+spec:
+  ports:
+  - name: browserless-chrome-web
+    port: 3000
+    protocol: TCP
+    targetPort: 3000
+  selector:
+    app: browserless-chrome
+  type: ClusterIP
+status:
+  loadBalancer: {}

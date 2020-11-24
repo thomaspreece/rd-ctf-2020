@@ -156,7 +156,7 @@ files:
 ---
 name: TheKey
 value: 5000
-description: Can you read the flag from the PCAP? <br/>Flag in CTF{xxxxxx} format.
+description: Can you read the flag from the PCAP? <br/>Flag in CTF{XXXXXXX} format.
 category: Network
 type: standard
 flags:

@@ -119,7 +119,7 @@ hidden: false
 ---
 name: Oh Crap!
 value: 3000
-description: We noticed some traffic to oncrap.ctf.rd-security-training.bbctest01.uk a few days ago but there appears to be nothing there...<br/>Flag in CTF{xxxxxx} format.
+description: We noticed some traffic to ohcrap.ctf.rd-security-training.bbctest01.uk a few days ago but there appears to be nothing there...<br/>Flag in CTF{xxxxxx} format.
 category: OSINT
 type: standard
 flags:

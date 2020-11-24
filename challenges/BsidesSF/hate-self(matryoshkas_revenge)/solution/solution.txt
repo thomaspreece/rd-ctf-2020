@@ -15,3 +15,6 @@ the encoded archive.  Once this in reconstructed you then have to
 decompress the 14 obscure layers.
 
 flag[tostrivetoseektofindandnottoyield]
+
+
+A writeup can be found at https://reverseltf.wordpress.com/2019/08/01/bsidessf2018-matryoshkas-revenge-writeup/

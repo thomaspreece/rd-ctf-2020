@@ -73,7 +73,7 @@ spec:
           value: /var/uploads
         - name: WORKERS
           value: "1"
-        image: localhost:32000/ctfd-custom:registry
+        image: rdctf/ctfd
         imagePullPolicy: ""
         name: ctfd
         resources: {}

@@ -13,3 +13,4 @@ CTFd/uploads/**/*
 .prettierignore
 .travis.yml
 node_modules
+challenges

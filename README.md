@@ -40,15 +40,19 @@ You'll need to update the yaml for your environment/domain. Then you can run the
 ```
 kubectl create namespace ctfd
 # Note: It is important that there is NOT any newlines in the below file
-# otherwise louketo will fail to autenticate with KeyCloak
+# otherwise proxy will fail to authenticate with KeyCloak
 # See https://www.funkypenguin.co.nz/beware-the-hidden-newlines-in-kubernetes-secrets/
-kubectl create secret generic ctfd-keycloak-client-secret --from-file=./ctfd-keycloak-client-secret.txt --namespace ctfd
+echo -n "MY_OAUTH_SECRET" > ./deploy-secrets/ctfd-oauth2-client-secret.txt
+pwgen 16 1 > ./deploy-secrets/ctfd-oauth2-cookie-secret.txt
+
+kubectl create secret generic ctfd-oauth2-client-secret --from-file=./deploy-secrets/ctfd-oauth2-client-secret.txt --namespace ctfd
+kubectl create secret generic ctfd-oauth2-cookie-secret --from-file=./deploy-secrets/ctfd-oauth2-cookie-secret.txt --namespace ctfd
 
 kubectl apply -f deploy/ctfd-mysql-db-deployment.yaml
 kubectl apply -f deploy/ctfd-redis-cache-deployment.yaml
 kubectl apply -f deploy/ctfd-deployment.yaml
 kubectl apply -f deploy/ctfd-nginx-deployment.yaml
-kubectl apply -f deploy/ctfd-louketo-proxy-deployment.yaml
+kubectl apply -f deploy/ctfd-oauth2-proxy-deployment.yaml
 ```
 
 # ![](https://github.com/CTFd/CTFd/blob/master/CTFd/themes/core/static/img/logo.png?raw=true)
